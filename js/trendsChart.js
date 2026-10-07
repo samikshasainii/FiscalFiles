@@ -58,11 +58,11 @@
         textStyle: {
           fontSize: 16,
           fontWeight: 600,
-          color: '#0f172a'
+          color: '#f8fafc'
         },
         subtextStyle: {
           fontSize: 12,
-          color: '#64748b'
+          color: '#94a3b8'
         }
       },
       tooltip: {
@@ -108,7 +108,7 @@
         top: 60,
         textStyle: {
           fontSize: 11,
-          color: '#475569'
+          color: '#cbd5e1'
         }
       },
       grid: {
@@ -124,10 +124,10 @@
           show: true,
           bottom: 5,
           height: 18,
-          borderColor: '#cbd5e1',
+          borderColor: '#334155',
           textStyle: {
             fontSize: 10,
-            color: '#64748b'
+            color: '#94a3b8'
           }
         }
       ],
@@ -140,7 +140,7 @@
           },
           axisLabel: {
             fontSize: 11,
-            color: '#334155'
+            color: '#cbd5e1'
           }
         }
       ],
@@ -150,13 +150,13 @@
           name: 'Amount (₹ Crore)',
           nameTextStyle: {
             fontSize: 11,
-            color: '#64748b'
+            color: '#94a3b8'
           },
           axisLabel: {
             formatter: function (v) {
               return v >= 100000 ? `${(v / 100000).toFixed(0)}L Cr` : `${v / 1000}k`;
             },
-            color: '#64748b'
+            color: '#94a3b8'
           },
           splitLine: {
             lineStyle: {

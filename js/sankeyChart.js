@@ -98,9 +98,9 @@
 
       const itemColor = NODE_COLORS[n.id] || CATEGORY_COLORS[n.category] || '#94a3b8';
       return {
-        id: n.id,
         name: n.name,
         category: n.category,
+        nodeId: n.id,
         itemStyle: {
           color: itemColor,
           borderColor: '#1e293b',
@@ -125,7 +125,7 @@
         lineStyle: {
           color: 'gradient',
           curveness: 0.5,
-          opacity: 0.42
+          opacity: 0.45
         }
       };
     });
@@ -139,11 +139,11 @@
         textStyle: {
           fontSize: 16,
           fontWeight: 600,
-          color: '#0f172a'
+          color: '#f8fafc'
         },
         subtextStyle: {
           fontSize: 12,
-          color: '#64748b'
+          color: '#94a3b8'
         }
       },
       tooltip: {
@@ -159,7 +159,7 @@
         },
         formatter: function (params) {
           if (params.dataType === 'node') {
-            const node = idToNodeMap[params.data.id] || nameToNodeMap[params.data.name];
+            const node = nameToNodeMap[params.name] || (params.data && idToNodeMap[params.data.nodeId]);
             const catName = node && node.category ? node.category.toUpperCase().replace('_', ' ') : 'NODE';
             const valueStr = params.value !== undefined ? formatINR(params.value) : '';
             return `
@@ -212,7 +212,7 @@
           links: links,
           label: {
             position: 'right',
-            color: '#1e293b',
+            color: '#f8fafc',
             fontSize: 11,
             fontWeight: 500,
             formatter: function (p) {

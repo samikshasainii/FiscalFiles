@@ -70,11 +70,11 @@
         textStyle: {
           fontSize: 16,
           fontWeight: 600,
-          color: '#0f172a'
+          color: '#f8fafc'
         },
         subtextStyle: {
           fontSize: 12,
-          color: '#64748b'
+          color: '#94a3b8'
         }
       },
       tooltip: {
