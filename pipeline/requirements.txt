@@ -1,0 +1,10 @@
+# FISCALFILES - Pipeline Dependencies (Member 1: Shreyashi)
+# Core data engineering, parsing, validation, and schema serialization
+
+requests>=2.31.0
+jsonschema>=4.20.0
+python-dateutil>=2.8.2
+
+# Optional data manipulation & statistical tools
+pandas>=2.1.0; python_version >= '3.9'
+numpy>=1.26.0; python_version >= '3.9'

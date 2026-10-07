@@ -1,0 +1,26 @@
+============================================================
+FISCALFILES DATA ENGINEERING AUDIT CERTIFICATE
+Auditor: Shreyashi (Member 1 - Data Lead & Pipeline Architect)
+Timestamp: 2026-10-07 18:32:42
+Status: 100% VERIFIED & RECONCILED (Exit Code 0)
+============================================================
+
+1. CHECKSUM MANIFEST:
+  - sankey_fiscal_flow.json: MD5 473f5c010be74ff62a4118b164325213
+  - sector_treemap.json: MD5 ceb2c1fd9c914d5cca9fa6a6dda068fc
+  - historical_trends.json: MD5 622ddab4c2667e3a64975fe5a84e5524
+  - budget_variance_be_re_actuals.json: MD5 92347b160a95626fff957f40ef3031d4
+
+2. AUDIT SUMMARY:
+  - Sankey Nodes & Links: All mapped, zero missing node IDs
+  - Inflow-Outflow Balance: Inflow ₹4,750,351.00 Cr == Outflow ₹4,750,351.00 Cr
+  - Discrepancy: ₹0.0000 Cr (Zero Leakage)
+  - Gross Tax Reconciliation: ₹3,794,130.00 Cr (Direct: ₹2,176,000.00 Cr + Indirect: ₹1,618,130.00 Cr)
+  - Net Tax to Centre: ₹2,574,347.00 Cr (Devolution: ₹1,219,783.00 Cr)
+  - Treemap Leaves Sum: ₹3,802,018.00 Cr across 8 primary sectors
+  - Decadal Time Series: 10 continuous fiscal periods (2015-16 to 2024-25)
+  - Fiscal Discipline Sectors: 6 sectors tested
+
+CERTIFIED BY:
+Shreyashi (Data Lead & Pipeline Architect)
+============================================================

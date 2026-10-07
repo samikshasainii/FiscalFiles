@@ -1,0 +1,62 @@
+[
+  {
+    "sector": "Defense & Security",
+    "year": "2023-24",
+    "budget_estimate": 432720.0,
+    "revised_estimate": 453580.0,
+    "actuals": 448900.0,
+    "variance_re_vs_be_pct": 4.82,
+    "variance_actual_vs_be_pct": 3.73,
+    "status": "Over-utilized"
+  },
+  {
+    "sector": "Healthcare & Family Welfare",
+    "year": "2023-24",
+    "budget_estimate": 89155.0,
+    "revised_estimate": 79221.0,
+    "actuals": 76500.0,
+    "variance_re_vs_be_pct": -11.14,
+    "variance_actual_vs_be_pct": -14.19,
+    "status": "Under-utilized"
+  },
+  {
+    "sector": "Education & Skill Dev",
+    "year": "2023-24",
+    "budget_estimate": 112899.0,
+    "revised_estimate": 108500.0,
+    "actuals": 104200.0,
+    "variance_re_vs_be_pct": -3.9,
+    "variance_actual_vs_be_pct": -7.7,
+    "status": "Under-utilized"
+  },
+  {
+    "sector": "Transport & Highways",
+    "year": "2023-24",
+    "budget_estimate": 270000.0,
+    "revised_estimate": 276000.0,
+    "actuals": 275500.0,
+    "variance_re_vs_be_pct": 2.22,
+    "variance_actual_vs_be_pct": 2.04,
+    "status": "Near Target"
+  },
+  {
+    "sector": "Rural Development (MGNREGA etc.)",
+    "year": "2023-24",
+    "budget_estimate": 157545.0,
+    "revised_estimate": 171061.0,
+    "actuals": 178000.0,
+    "variance_re_vs_be_pct": 8.58,
+    "variance_actual_vs_be_pct": 12.98,
+    "status": "Demand Driven Expansion"
+  },
+  {
+    "sector": "Subsidies (Food, Fert, Fuel)",
+    "year": "2023-24",
+    "budget_estimate": 374707.0,
+    "revised_estimate": 413541.0,
+    "actuals": 410200.0,
+    "variance_re_vs_be_pct": 10.36,
+    "variance_actual_vs_be_pct": 9.47,
+    "status": "Price Shock Buffer"
+  }
+]

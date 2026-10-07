@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FISCALFILES - India's Tax Collection vs. Sectoral Expenditure</title>
+  
+  <!-- Modern Clean Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core Dashboard CSS (Samiksha) -->
+  <link rel="stylesheet" href="./css/styles.css">
+
+  <!-- Apache ECharts Library -->
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+
+  <!-- Pre-bundled Zero-CORS Data (Shreyashi) -->
+  <script src="./data/data_bundle.js"></script>
+
+  <!-- Core Graph Visualization Engines (Aadrika) -->
+  <script src="./js/sankeyChart.js"></script>
+  <script src="./js/treemapChart.js"></script>
+  <script src="./js/trendsChart.js"></script>
+  <script src="./js/varianceChart.js"></script>
+</head>
+<body>
+
+  <!-- Top Header Navigation & Filter Bar -->
+  <header class="header">
+    <div class="header-title">
+      <h1>
+        FISCALFILES 
+        <span class="badge">Live Dashboard</span>
+      </h1>
+      <p>India's Union Budget: Tax Collection Architecture vs. Sectoral Expenditure</p>
+    </div>
+
+    <!-- Interactive Filters (Samiksha) -->
+    <div class="controls-bar">
+      <select id="filter-year" class="select-control">
+        <option value="2024-25" selected>FY 2024-25 (Latest BE)</option>
+        <option value="2023-24">FY 2023-24 (RE / Actuals)</option>
+      </select>
+
+      <select id="filter-stage" class="select-control">
+        <option value="BE" selected>Budget Estimates (BE)</option>
+        <option value="RE">Revised Estimates (RE)</option>
+      </select>
+
+      <div class="team-badge">
+        Engines: <strong>Aadrika (Viz Lead)</strong> | Pipeline: <strong>Shreyashi</strong> | UI: <strong>Samiksha</strong>
+      </div>
+    </div>
+  </header>
+
+  <!-- KPI Summary Ribbon -->
+  <div class="kpi-grid">
+    <div class="kpi-card green">
+      <div class="kpi-label">Gross Tax Revenue</div>
+      <div class="kpi-value" id="kpi-gross-tax">₹37.94 Lakh Cr</div>
+      <div class="kpi-sub">Direct Taxes (57.4%) + Indirect Taxes (42.6%)</div>
+    </div>
+    <div class="kpi-card amber">
+      <div class="kpi-label">States' Devolution Share</div>
+      <div class="kpi-value" id="kpi-devolution">₹12.20 Lakh Cr</div>
+      <div class="kpi-sub">15th Finance Commission (~41% Divisible Pool)</div>
+    </div>
+    <div class="kpi-card blue">
+      <div class="kpi-label">Consolidated Fund Outlay</div>
+      <div class="kpi-value" id="kpi-total-pool">₹47.50 Lakh Cr</div>
+      <div class="kpi-sub">Zero Leakage: Total Inflow = Total Outflow</div>
+    </div>
+    <div class="kpi-card purple">
+      <div class="kpi-label">10-Year Capex Surge</div>
+      <div class="kpi-value">19.46% CAGR</div>
+      <div class="kpi-sub">Fiscal deficit consolidates to 5.1% of GDP</div>
+    </div>
+  </div>
+
+  <!-- Main Visualization Canvas Grid -->
+  <main class="dashboard-grid">
+
+    <!-- 1. Macro Fiscal Sankey Flow -->
+    <section class="chart-card">
+      <div id="sankey-chart" class="chart-container tall"></div>
+    </section>
+
+    <!-- 2. Two-Column Row: Treemap Drilldown & 10-Year Trends -->
+    <div class="two-col-grid">
+      <!-- Sectoral & Scheme Treemap -->
+      <section class="chart-card">
+        <div id="treemap-chart" class="chart-container medium"></div>
+      </section>
+
+      <!-- Decadal Longitudinal Trends -->
+      <section class="chart-card">
+        <div id="trends-chart" class="chart-container medium"></div>
+      </section>
+    </div>
+
+    <!-- 3. Fiscal Variance & Discipline (BE vs RE vs Actuals) -->
+    <section class="chart-card">
+      <div id="variance-chart" class="chart-container medium"></div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>FISCALFILES | B.Tech Graph Visualization Project | Built with Apache ECharts &amp; Official Union Budget Data (<a href="https://www.indiabudget.gov.in" target="_blank" rel="noopener" style="color: #38bdf8; text-decoration: underline;">indiabudget.gov.in</a> &amp; <a href="https://cga.nic.in" target="_blank" rel="noopener" style="color: #38bdf8; text-decoration: underline;">cga.nic.in</a>)</p>
+  </footer>
+
+  <!-- Application Controller Script (Samiksha) -->
+  <script src="./js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FISCALFILES - Visualization Engine Preview (Aadrika)</title>
+  
+  <!-- Modern Clean Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Apache ECharts from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+
+  <!-- Pre-bundled Data for 100% Offline / Zero-CORS compatibility -->
+  <script src="./data/data_bundle.js"></script>
+
+  <!-- Aadrika's Chart Engine Modules -->
+  <script src="./js/sankeyChart.js"></script>
+  <script src="./js/treemapChart.js"></script>
+  <script src="./js/trendsChart.js"></script>
+  <script src="./js/varianceChart.js"></script>
+
+  <style>
+    :root {
+      --bg-primary: #0b0f19;
+      --bg-card: #111827;
+      --bg-card-border: #1f2937;
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+      --accent-green: #10b981;
+      --accent-blue: #3b82f6;
+      --accent-amber: #f59e0b;
+      --accent-purple: #8b5cf6;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      padding: 24px;
+      line-height: 1.5;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--bg-card-border);
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .header-title h1 {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .badge {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 9999px;
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .header-title p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .team-badge {
+      background: var(--bg-card);
+      border: 1px solid var(--bg-card-border);
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .team-badge strong {
+      color: var(--text-main);
+    }
+
+    /* KPI Summary Cards Grid */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .kpi-card {
+      background: var(--bg-card);
+      border: 1px solid var(--bg-card-border);
+      border-radius: 12px;
+      padding: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .kpi-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+    }
+
+    .kpi-card.green::before { background: var(--accent-green); }
+    .kpi-card.amber::before { background: var(--accent-amber); }
+    .kpi-card.blue::before { background: var(--accent-blue); }
+    .kpi-card.purple::before { background: var(--accent-purple); }
+
+    .kpi-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .kpi-value {
+      font-size: 22px;
+      font-weight: 700;
+      margin-top: 4px;
+      color: #ffffff;
+    }
+
+    .kpi-sub {
+      font-size: 11px;
+      color: #6ee7b7;
+      margin-top: 4px;
+    }
+
+    /* Chart Containers Layout */
+    .dashboard-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .two-col-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    @media (max-width: 1024px) {
+      .two-col-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .chart-card {
+      background: var(--bg-card);
+      border: 1px solid var(--bg-card-border);
+      border-radius: 14px;
+      padding: 16px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .chart-container {
+      width: 100%;
+      height: 520px;
+    }
+
+    .chart-container.tall {
+      height: 600px;
+    }
+
+    .chart-container.medium {
+      height: 480px;
+    }
+
+    footer {
+      margin-top: 36px;
+      padding-top: 20px;
+      border-top: 1px solid var(--bg-card-border);
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Dashboard Top Header -->
+  <header class="header">
+    <div class="header-title">
+      <h1>
+        FISCALFILES 
+        <span class="badge">Engine Preview</span>
+      </h1>
+      <p>India's Union Budget: Tax Collection Architecture vs. Sectoral Expenditure (FY 2024-25 BE)</p>
+    </div>
+    <div class="team-badge">
+      Author: <strong>Aadrika (Member 2 - Viz & Engine Lead)</strong> | Pipeline: <strong>Shreyashi (Member 1)</strong>
+    </div>
+  </header>
+
+  <!-- KPI Summary Ribbon -->
+  <div class="kpi-grid">
+    <div class="kpi-card green">
+      <div class="kpi-label">Gross Tax Revenue</div>
+      <div class="kpi-value" id="kpi-gross-tax">₹37.94 Lakh Cr</div>
+      <div class="kpi-sub">Direct (57.4%) + Indirect (42.6%)</div>
+    </div>
+    <div class="kpi-card amber">
+      <div class="kpi-label">States' Devolution Share</div>
+      <div class="kpi-value" id="kpi-devolution">₹12.20 Lakh Cr</div>
+      <div class="kpi-sub">15th Finance Commission (~41% Pool)</div>
+    </div>
+    <div class="kpi-card blue">
+      <div class="kpi-label">Consolidated Fund Outlay</div>
+      <div class="kpi-value" id="kpi-total-pool">₹47.50 Lakh Cr</div>
+      <div class="kpi-sub">Total Receipts = Total Spending</div>
+    </div>
+    <div class="kpi-card purple">
+      <div class="kpi-label">10-Yr Capex Expansion</div>
+      <div class="kpi-value">19.46% CAGR</div>
+      <div class="kpi-sub">Deficit consolidated down to 5.1% GDP</div>
+    </div>
+  </div>
+
+  <!-- Visualization Charts Section -->
+  <div class="dashboard-grid">
+
+    <!-- Chart 1: Macro Fiscal Sankey Flow -->
+    <div class="chart-card">
+      <div id="sankey-chart" class="chart-container tall"></div>
+    </div>
+
+    <!-- Charts 2 & 3: Two-Column Row (Treemap & Historical Trends) -->
+    <div class="two-col-grid">
+      <!-- Sectoral Treemap -->
+      <div class="chart-card">
+        <div id="treemap-chart" class="chart-container medium"></div>
+      </div>
+
+      <!-- Longitudinal Trends -->
+      <div class="chart-card">
+        <div id="trends-chart" class="chart-container medium"></div>
+      </div>
+    </div>
+
+    <!-- Chart 4: Budget Variance Analysis (BE vs RE vs Actuals) -->
+    <div class="chart-card">
+      <div id="variance-chart" class="chart-container medium"></div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>FISCALFILES | B.Tech Graph Visualization Project | 100% Reconciled Official Union Budget &amp; RBI Datasets (<a href="https://www.indiabudget.gov.in" target="_blank" rel="noopener" style="color: #38bdf8; text-decoration: underline;">indiabudget.gov.in</a> &amp; <a href="https://cga.nic.in" target="_blank" rel="noopener" style="color: #38bdf8; text-decoration: underline;">cga.nic.in</a>)</p>
+  </footer>
+
+  <!-- Chart Bootstrap & Initialization Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', async function () {
+      console.log('Initializing FISCALFILES Visualization Suite...');
+
+      // 1. Resolve Data: Prefer window.FISCAL_DATA (offline-compatible), fallback to fetch
+      let data = window.FISCAL_DATA;
+
+      if (!data) {
+        console.warn('window.FISCAL_DATA not found. Attempting async fetch from ./data/...');
+        try {
+          const [sankeyRes, treemapRes, trendsRes, varianceRes] = await Promise.all([
+            fetch('./data/sankey_fiscal_flow.json').then(r => r.json()),
+            fetch('./data/sector_treemap.json').then(r => r.json()),
+            fetch('./data/historical_trends.json').then(r => r.json()),
+            fetch('./data/budget_variance_be_re_actuals.json').then(r => r.json())
+          ]);
+          data = {
+            sankey: sankeyRes,
+            treemap: treemapRes,
+            trends: trendsRes,
+            variance: varianceRes
+          };
+        } catch (err) {
+          console.error('Failed to load JSON datasets:', err);
+          alert('Could not load fiscal data files. Please check console logs.');
+          return;
+        }
+      }
+
+      // 2. Mount Sankey Chart
+      if (window.SankeyChart && data.sankey) {
+        window.SankeyChart.init('sankey-chart', data.sankey);
+      }
+
+      // 3. Mount Treemap Chart
+      if (window.TreemapChart && data.treemap) {
+        window.TreemapChart.init('treemap-chart', data.treemap);
+      }
+
+      // 4. Mount Longitudinal Trends Chart
+      if (window.TrendsChart && data.trends) {
+        window.TrendsChart.init('trends-chart', data.trends);
+      }
+
+      // 5. Mount Fiscal Variance Chart
+      if (window.VarianceChart && data.variance) {
+        window.VarianceChart.init('variance-chart', data.variance);
+      }
+
+      console.log('✅ All 4 chart engines mounted and running successfully!');
+    });
+  </script>
+</body>
+</html>

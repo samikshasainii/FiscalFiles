@@ -1,0 +1,229 @@
+{
+  "metadata": {
+    "title": "India Union Budget Fiscal Flow (Inflow to Sectoral Outlay)",
+    "source": "Ministry of Finance (Union Budget 2024-25 Receipts & Expenditure Budget)",
+    "author": "Shreyashi (Data Lead & Pipeline Architect - Member 1)",
+    "verification_status": "Reconciled & Mathematically Balanced"
+  },
+  "fiscal_year": "2024-25",
+  "data_stage": "BE",
+  "unit": "INR_CRORE",
+  "summary": {
+    "gross_tax_revenue": 3794130.0,
+    "states_share_devolution": 1219783.0,
+    "net_tax_to_centre": 2574347.0,
+    "non_tax_revenue": 562692.0,
+    "borrowings_fiscal_deficit": 1613312.0,
+    "total_central_receipts": 4750351.0,
+    "total_central_expenditure": 4750351.0
+  },
+  "nodes": [
+    {
+      "id": "gross_tax",
+      "name": "Gross Tax Revenue",
+      "category": "tax_source"
+    },
+    {
+      "id": "direct_tax",
+      "name": "Direct Taxes",
+      "category": "tax_source"
+    },
+    {
+      "id": "indirect_tax",
+      "name": "Indirect Taxes",
+      "category": "tax_source"
+    },
+    {
+      "id": "corp_tax",
+      "name": "Corporation Tax",
+      "category": "inflow"
+    },
+    {
+      "id": "income_tax",
+      "name": "Income Tax",
+      "category": "inflow"
+    },
+    {
+      "id": "gst",
+      "name": "Goods & Services Tax (GST)",
+      "category": "inflow"
+    },
+    {
+      "id": "customs",
+      "name": "Customs Duty",
+      "category": "inflow"
+    },
+    {
+      "id": "excise",
+      "name": "Union Excise Duties",
+      "category": "inflow"
+    },
+    {
+      "id": "devolution",
+      "name": "States' Share of Taxes",
+      "category": "transfer"
+    },
+    {
+      "id": "net_tax",
+      "name": "Net Tax to Centre",
+      "category": "pool"
+    },
+    {
+      "id": "borrowings",
+      "name": "Borrowings & Liabilities",
+      "category": "inflow"
+    },
+    {
+      "id": "non_tax",
+      "name": "Non-Tax Receipts",
+      "category": "inflow"
+    },
+    {
+      "id": "central_pool",
+      "name": "Consolidated Fund of India",
+      "category": "pool"
+    },
+    {
+      "id": "defense",
+      "name": "Defense & Security",
+      "category": "expenditure"
+    },
+    {
+      "id": "infra",
+      "name": "Transport & Infrastructure",
+      "category": "expenditure"
+    },
+    {
+      "id": "social",
+      "name": "Education & Healthcare",
+      "category": "expenditure"
+    },
+    {
+      "id": "rural_agri",
+      "name": "Agri & Rural Development",
+      "category": "expenditure"
+    },
+    {
+      "id": "subsidies",
+      "name": "Subsidies (Food, Fert, Fuel)",
+      "category": "expenditure"
+    },
+    {
+      "id": "interest",
+      "name": "Interest Payments",
+      "category": "expenditure"
+    },
+    {
+      "id": "transfers_grants",
+      "name": "Finance Commission Transfers",
+      "category": "expenditure"
+    },
+    {
+      "id": "other_exp",
+      "name": "General Admin & Others",
+      "category": "expenditure"
+    }
+  ],
+  "links": [
+    {
+      "source": "corp_tax",
+      "target": "direct_tax",
+      "value": 1020000.0
+    },
+    {
+      "source": "income_tax",
+      "target": "direct_tax",
+      "value": 1156000.0
+    },
+    {
+      "source": "gst",
+      "target": "indirect_tax",
+      "value": 1067650.0
+    },
+    {
+      "source": "customs",
+      "target": "indirect_tax",
+      "value": 231700.0
+    },
+    {
+      "source": "excise",
+      "target": "indirect_tax",
+      "value": 318780.0
+    },
+    {
+      "source": "direct_tax",
+      "target": "gross_tax",
+      "value": 2176000.0
+    },
+    {
+      "source": "indirect_tax",
+      "target": "gross_tax",
+      "value": 1618130.0
+    },
+    {
+      "source": "gross_tax",
+      "target": "devolution",
+      "value": 1219783.0
+    },
+    {
+      "source": "gross_tax",
+      "target": "net_tax",
+      "value": 2574347.0
+    },
+    {
+      "source": "net_tax",
+      "target": "central_pool",
+      "value": 2574347.0
+    },
+    {
+      "source": "borrowings",
+      "target": "central_pool",
+      "value": 1613312.0
+    },
+    {
+      "source": "non_tax",
+      "target": "central_pool",
+      "value": 562692.0
+    },
+    {
+      "source": "central_pool",
+      "target": "interest",
+      "value": 1162940.0
+    },
+    {
+      "source": "central_pool",
+      "target": "defense",
+      "value": 454773.0
+    },
+    {
+      "source": "central_pool",
+      "target": "infra",
+      "value": 544000.0
+    },
+    {
+      "source": "central_pool",
+      "target": "rural_agri",
+      "value": 265808.0
+    },
+    {
+      "source": "central_pool",
+      "target": "subsidies",
+      "value": 381175.0
+    },
+    {
+      "source": "central_pool",
+      "target": "social",
+      "value": 212450.0
+    },
+    {
+      "source": "central_pool",
+      "target": "transfers_grants",
+      "value": 232000.0
+    },
+    {
+      "source": "central_pool",
+      "target": "other_exp",
+      "value": 1497205.0
+    }
+  ]
+}
