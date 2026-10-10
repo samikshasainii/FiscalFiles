@@ -1,0 +1,444 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d5" for="edge" attr.name="relation" attr.type="string"/>
+<key id="d4" for="edge" attr.name="weight" attr.type="double"/>
+<key id="d3" for="node" attr.name="budget" attr.type="double"/>
+<key id="d2" for="node" attr.name="tier" attr.type="long"/>
+<key id="d1" for="node" attr.name="category" attr.type="string"/>
+<key id="d0" for="node" attr.name="label" attr.type="string"/>
+<graph edgedefault="directed"><node id="corp_tax">
+  <data key="d0">Corporation Tax</data>
+  <data key="d1">Direct Tax</data>
+  <data key="d2">1</data>
+  <data key="d3">1020000.0</data>
+</node>
+<node id="income_tax">
+  <data key="d0">Personal Income Tax</data>
+  <data key="d1">Direct Tax</data>
+  <data key="d2">1</data>
+  <data key="d3">1156000.0</data>
+</node>
+<node id="gst">
+  <data key="d0">Goods &amp; Services Tax (GST)</data>
+  <data key="d1">Indirect Tax</data>
+  <data key="d2">1</data>
+  <data key="d3">1067650.0</data>
+</node>
+<node id="customs">
+  <data key="d0">Customs Duty</data>
+  <data key="d1">Indirect Tax</data>
+  <data key="d2">1</data>
+  <data key="d3">231700.0</data>
+</node>
+<node id="excise">
+  <data key="d0">Union Excise Duties</data>
+  <data key="d1">Indirect Tax</data>
+  <data key="d2">1</data>
+  <data key="d3">318780.0</data>
+</node>
+<node id="borrowings">
+  <data key="d0">Fiscal Deficit Borrowings</data>
+  <data key="d1">Capital Inflow</data>
+  <data key="d2">1</data>
+  <data key="d3">1613312.0</data>
+</node>
+<node id="non_tax">
+  <data key="d0">Non-Tax Receipts (RBI/Dividends)</data>
+  <data key="d1">Non-Tax Revenue</data>
+  <data key="d2">1</data>
+  <data key="d3">562692.0</data>
+</node>
+<node id="direct_tax">
+  <data key="d0">Direct Taxes Pool</data>
+  <data key="d1">Tax Pool</data>
+  <data key="d2">2</data>
+  <data key="d3">2176000.0</data>
+</node>
+<node id="indirect_tax">
+  <data key="d0">Indirect Taxes Pool</data>
+  <data key="d1">Tax Pool</data>
+  <data key="d2">2</data>
+  <data key="d3">1618130.0</data>
+</node>
+<node id="gross_tax">
+  <data key="d0">Gross Tax Revenue</data>
+  <data key="d1">Macro Hub</data>
+  <data key="d2">2</data>
+  <data key="d3">3794130.0</data>
+</node>
+<node id="devolution">
+  <data key="d0">States Devolution (41% FC Pool)</data>
+  <data key="d1">Constitutional Devolution</data>
+  <data key="d2">3</data>
+  <data key="d3">1219783.0</data>
+</node>
+<node id="net_tax">
+  <data key="d0">Net Tax to Centre</data>
+  <data key="d1">Central Revenue</data>
+  <data key="d2">3</data>
+  <data key="d3">2574347.0</data>
+</node>
+<node id="central_pool">
+  <data key="d0">Consolidated Fund of India (CFI)</data>
+  <data key="d1">Sovereign Treasury</data>
+  <data key="d2">4</data>
+  <data key="d3">4750351.0</data>
+</node>
+<node id="interest">
+  <data key="d0">Debt Servicing (Interest Payments)</data>
+  <data key="d1">Sovereign Obligation</data>
+  <data key="d2">5</data>
+  <data key="d3">1162940.0</data>
+</node>
+<node id="defense">
+  <data key="d0">Defense &amp; National Security</data>
+  <data key="d1">Strategic Defense</data>
+  <data key="d2">5</data>
+  <data key="d3">454773.0</data>
+</node>
+<node id="infra">
+  <data key="d0">Transport &amp; Infrastructure</data>
+  <data key="d1">Capital Infrastructure</data>
+  <data key="d2">5</data>
+  <data key="d3">544000.0</data>
+</node>
+<node id="rural_agri">
+  <data key="d0">Agri &amp; Rural Development</data>
+  <data key="d1">Rural &amp; Agrarian</data>
+  <data key="d2">5</data>
+  <data key="d3">265808.0</data>
+</node>
+<node id="subsidies">
+  <data key="d0">Major Subsidies (Food &amp; Fert)</data>
+  <data key="d1">Social Safety Net</data>
+  <data key="d2">5</data>
+  <data key="d3">381175.0</data>
+</node>
+<node id="social">
+  <data key="d0">Education &amp; Health Human Capital</data>
+  <data key="d1">Human Capital</data>
+  <data key="d2">5</data>
+  <data key="d3">212450.0</data>
+</node>
+<node id="transfers_grants">
+  <data key="d0">Finance Commission Grants</data>
+  <data key="d1">Intergovernmental</data>
+  <data key="d2">5</data>
+  <data key="d3">232000.0</data>
+</node>
+<node id="other_exp">
+  <data key="d0">General Admin &amp; Organs of State</data>
+  <data key="d1">Public Administration</data>
+  <data key="d2">5</data>
+  <data key="d3">1497205.0</data>
+</node>
+<node id="mod">
+  <data key="d0">Ministry of Defence</data>
+  <data key="d1">Strategic Defense</data>
+  <data key="d2">6</data>
+  <data key="d3">454773.0</data>
+</node>
+<node id="def_capex">
+  <data key="d0">Defense Modernization Capex</data>
+  <data key="d1">Strategic Defense</data>
+  <data key="d2">6</data>
+  <data key="d3">172000.0</data>
+</node>
+<node id="def_salaries">
+  <data key="d0">Defense Revenue &amp; Pensions</data>
+  <data key="d1">Strategic Defense</data>
+  <data key="d2">6</data>
+  <data key="d3">282773.0</data>
+</node>
+<node id="morth">
+  <data key="d0">Ministry of Road Transport &amp; Highways</data>
+  <data key="d1">Capital Infrastructure</data>
+  <data key="d2">6</data>
+  <data key="d3">278000.0</data>
+</node>
+<node id="nhai">
+  <data key="d0">NHAI Expressways &amp; Highways</data>
+  <data key="d1">Capital Infrastructure</data>
+  <data key="d2">6</data>
+  <data key="d3">168464.0</data>
+</node>
+<node id="railways">
+  <data key="d0">Indian Railways Capital Outlay</data>
+  <data key="d1">Capital Infrastructure</data>
+  <data key="d2">6</data>
+  <data key="d3">252200.0</data>
+</node>
+<node id="mohua">
+  <data key="d0">Ministry of Housing &amp; Urban Affairs</data>
+  <data key="d1">Capital Infrastructure</data>
+  <data key="d2">6</data>
+  <data key="d3">82577.0</data>
+</node>
+<node id="pmay">
+  <data key="d0">Pradhan Mantri Awas Yojana (PMAY)</data>
+  <data key="d1">Social Safety Net</data>
+  <data key="d2">6</data>
+  <data key="d3">54500.0</data>
+</node>
+<node id="mord">
+  <data key="d0">Ministry of Rural Development</data>
+  <data key="d1">Rural &amp; Agrarian</data>
+  <data key="d2">6</data>
+  <data key="d3">177566.0</data>
+</node>
+<node id="mgnrega">
+  <data key="d0">MGNREGA Rural Employment Guarantee</data>
+  <data key="d1">Rural &amp; Agrarian</data>
+  <data key="d2">6</data>
+  <data key="d3">86000.0</data>
+</node>
+<node id="moa">
+  <data key="d0">Ministry of Agriculture &amp; Farmers Welfare</data>
+  <data key="d1">Rural &amp; Agrarian</data>
+  <data key="d2">6</data>
+  <data key="d3">132000.0</data>
+</node>
+<node id="pm_kisan">
+  <data key="d0">PM-KISAN Direct Income Support</data>
+  <data key="d1">Rural &amp; Agrarian</data>
+  <data key="d2">6</data>
+  <data key="d3">60000.0</data>
+</node>
+<node id="food_pds">
+  <data key="d0">Dept of Food &amp; Public Distribution</data>
+  <data key="d1">Social Safety Net</data>
+  <data key="d2">6</data>
+  <data key="d3">213000.0</data>
+</node>
+<node id="nfsa_food">
+  <data key="d0">NFSA Food Subsidy (PDS)</data>
+  <data key="d1">Social Safety Net</data>
+  <data key="d2">6</data>
+  <data key="d3">205250.0</data>
+</node>
+<node id="fert_dept">
+  <data key="d0">Department of Fertilizers</data>
+  <data key="d1">Social Safety Net</data>
+  <data key="d2">6</data>
+  <data key="d3">168000.0</data>
+</node>
+<node id="fert_sub">
+  <data key="d0">Fertilizer Subsidy (Urea &amp; NBS)</data>
+  <data key="d1">Social Safety Net</data>
+  <data key="d2">6</data>
+  <data key="d3">164000.0</data>
+</node>
+<node id="mohfw_health">
+  <data key="d0">Ministry of Health &amp; Family Welfare</data>
+  <data key="d1">Human Capital</data>
+  <data key="d2">6</data>
+  <data key="d3">90659.0</data>
+</node>
+<edge source="corp_tax" target="direct_tax">
+  <data key="d4">1020000.0</data>
+  <data key="d5">AGGREGATES_INTO</data>
+</edge>
+<edge source="income_tax" target="direct_tax">
+  <data key="d4">1156000.0</data>
+  <data key="d5">AGGREGATES_INTO</data>
+</edge>
+<edge source="gst" target="indirect_tax">
+  <data key="d4">1067650.0</data>
+  <data key="d5">AGGREGATES_INTO</data>
+</edge>
+<edge source="customs" target="indirect_tax">
+  <data key="d4">231700.0</data>
+  <data key="d5">AGGREGATES_INTO</data>
+</edge>
+<edge source="excise" target="indirect_tax">
+  <data key="d4">318780.0</data>
+  <data key="d5">AGGREGATES_INTO</data>
+</edge>
+<edge source="borrowings" target="central_pool">
+  <data key="d4">1613312.0</data>
+  <data key="d5">DEFICIT_FINANCES_CFI</data>
+</edge>
+<edge source="borrowings" target="infra">
+  <data key="d4">544000.0</data>
+  <data key="d5">DIRECT_DEBT_TO_CAPEX</data>
+</edge>
+<edge source="borrowings" target="interest">
+  <data key="d4">618940.0</data>
+  <data key="d5">DEBT_ROLLOVER_FINANCING</data>
+</edge>
+<edge source="borrowings" target="defense">
+  <data key="d4">172000.0</data>
+  <data key="d5">SECURITY_CAPITAL_BORROWING</data>
+</edge>
+<edge source="non_tax" target="central_pool">
+  <data key="d4">562692.0</data>
+  <data key="d5">NON_TAX_SURPLUS_INTO_CFI</data>
+</edge>
+<edge source="non_tax" target="social">
+  <data key="d4">150000.0</data>
+  <data key="d5">DIVIDEND_TO_HUMAN_CAPITAL</data>
+</edge>
+<edge source="non_tax" target="infra">
+  <data key="d4">200000.0</data>
+  <data key="d5">SPECTRUM_AUCTION_TO_INFRA</data>
+</edge>
+<edge source="non_tax" target="other_exp">
+  <data key="d4">212692.0</data>
+  <data key="d5">ADMIN_COST_ABSORPTION</data>
+</edge>
+<edge source="direct_tax" target="gross_tax">
+  <data key="d4">2176000.0</data>
+  <data key="d5">FORMS_GROSS_REVENUE</data>
+</edge>
+<edge source="indirect_tax" target="gross_tax">
+  <data key="d4">1618130.0</data>
+  <data key="d5">FORMS_GROSS_REVENUE</data>
+</edge>
+<edge source="gross_tax" target="devolution">
+  <data key="d4">1219783.0</data>
+  <data key="d5">DEVOLVES_CONSTITUTIONALLY</data>
+</edge>
+<edge source="gross_tax" target="net_tax">
+  <data key="d4">2574347.0</data>
+  <data key="d5">NET_TRANSFER_TO_CENTRE</data>
+</edge>
+<edge source="devolution" target="rural_agri">
+  <data key="d4">350000.0</data>
+  <data key="d5">STATE_DEVOLUTION_RURAL_SPEND</data>
+</edge>
+<edge source="devolution" target="social">
+  <data key="d4">380000.0</data>
+  <data key="d5">STATE_DEVOLUTION_HEALTH_EDU</data>
+</edge>
+<edge source="net_tax" target="central_pool">
+  <data key="d4">2574347.0</data>
+  <data key="d5">CONSOLIDATES_INTO_CFI</data>
+</edge>
+<edge source="net_tax" target="transfers_grants">
+  <data key="d4">232000.0</data>
+  <data key="d5">POST_DEVOLUTION_DEFICIT_GRANTS</data>
+</edge>
+<edge source="central_pool" target="interest">
+  <data key="d4">1162940.0</data>
+  <data key="d5">SERVICES_PUBLIC_DEBT</data>
+</edge>
+<edge source="central_pool" target="defense">
+  <data key="d4">454773.0</data>
+  <data key="d5">FUNDS_NATIONAL_SECURITY</data>
+</edge>
+<edge source="central_pool" target="infra">
+  <data key="d4">544000.0</data>
+  <data key="d5">CAPEX_ALLOCATION</data>
+</edge>
+<edge source="central_pool" target="rural_agri">
+  <data key="d4">265808.0</data>
+  <data key="d5">AGRI_WELFARE_ALLOCATION</data>
+</edge>
+<edge source="central_pool" target="subsidies">
+  <data key="d4">381175.0</data>
+  <data key="d5">SUBSIDY_SUPPORT</data>
+</edge>
+<edge source="central_pool" target="social">
+  <data key="d4">212450.0</data>
+  <data key="d5">HUMAN_CAPITAL_ALLOCATION</data>
+</edge>
+<edge source="central_pool" target="transfers_grants">
+  <data key="d4">232000.0</data>
+  <data key="d5">FC_STATUTORY_GRANTS</data>
+</edge>
+<edge source="central_pool" target="other_exp">
+  <data key="d4">1497205.0</data>
+  <data key="d5">CIVIL_GOVERNANCE_EXP</data>
+</edge>
+<edge source="defense" target="mod">
+  <data key="d4">454773.0</data>
+  <data key="d5">MINISTRY_ENVELOPE</data>
+</edge>
+<edge source="defense" target="infra">
+  <data key="d4">25000.0</data>
+  <data key="d5">STRATEGIC_BORDER_ROADS</data>
+</edge>
+<edge source="infra" target="morth">
+  <data key="d4">278000.0</data>
+  <data key="d5">HIGHWAY_PORTFOLIO</data>
+</edge>
+<edge source="infra" target="railways">
+  <data key="d4">252200.0</data>
+  <data key="d5">RAILWAY_CAPEX_FUND</data>
+</edge>
+<edge source="infra" target="mohua">
+  <data key="d4">82577.0</data>
+  <data key="d5">URBAN_INFRA_FUND</data>
+</edge>
+<edge source="rural_agri" target="mord">
+  <data key="d4">177566.0</data>
+  <data key="d5">RURAL_DEVELOPMENT_ENVELOPE</data>
+</edge>
+<edge source="rural_agri" target="moa">
+  <data key="d4">132000.0</data>
+  <data key="d5">AGRICULTURE_ENVELOPE</data>
+</edge>
+<edge source="subsidies" target="food_pds">
+  <data key="d4">213000.0</data>
+  <data key="d5">FOOD_SUBSIDY_ENVELOPE</data>
+</edge>
+<edge source="subsidies" target="fert_dept">
+  <data key="d4">168000.0</data>
+  <data key="d5">FERTILIZER_SUBSIDY_ENVELOPE</data>
+</edge>
+<edge source="social" target="mohfw_health">
+  <data key="d4">90659.0</data>
+  <data key="d5">HEALTHCARE_ENVELOPE</data>
+</edge>
+<edge source="transfers_grants" target="mord">
+  <data key="d4">120000.0</data>
+  <data key="d5">PANCHAYAT_TIER_GRANTS</data>
+</edge>
+<edge source="mod" target="def_capex">
+  <data key="d4">172000.0</data>
+  <data key="d5">CAPITAL_MODERNIZATION</data>
+</edge>
+<edge source="mod" target="def_salaries">
+  <data key="d4">282773.0</data>
+  <data key="d5">REVENUE_SALARIES_PENSIONS</data>
+</edge>
+<edge source="morth" target="nhai">
+  <data key="d4">168464.0</data>
+  <data key="d5">FLAGSHIP_EXPRESSWAYS</data>
+</edge>
+<edge source="morth" target="railways">
+  <data key="d4">45000.0</data>
+  <data key="d5">PM_GATI_SHAKTI_MULTIMODAL</data>
+</edge>
+<edge source="mohua" target="pmay">
+  <data key="d4">30171.0</data>
+  <data key="d5">URBAN_HOUSING_PROGRAM</data>
+</edge>
+<edge source="mord" target="mgnrega">
+  <data key="d4">86000.0</data>
+  <data key="d5">GUARANTEED_WAGE_SAFETY</data>
+</edge>
+<edge source="mord" target="pmay">
+  <data key="d4">24329.0</data>
+  <data key="d5">RURAL_HOUSING_PMAY_G</data>
+</edge>
+<edge source="moa" target="pm_kisan">
+  <data key="d4">60000.0</data>
+  <data key="d5">DIRECT_INCOME_TRANSFER</data>
+</edge>
+<edge source="moa" target="fert_dept">
+  <data key="d4">120000.0</data>
+  <data key="d5">AGRI_FERT_INPUT_SUBSIDY</data>
+</edge>
+<edge source="food_pds" target="nfsa_food">
+  <data key="d4">205250.0</data>
+  <data key="d5">FOOD_SECURITY_PDS</data>
+</edge>
+<edge source="food_pds" target="rural_agri">
+  <data key="d4">180000.0</data>
+  <data key="d5">MSP_GRAIN_PROCUREMENT</data>
+</edge>
+<edge source="fert_dept" target="fert_sub">
+  <data key="d4">164000.0</data>
+  <data key="d5">AGRI_INPUT_SUBSIDY</data>
+</edge>
+</graph></graphml>

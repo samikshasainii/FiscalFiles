@@ -17,5 +17,10 @@ venv/
 Thumbs.db
 desktop.ini
 
-# Logs
+# Logs & Temporary Execution files
 *.log
+verification_log.txt
+
+# Non-Project Assignment Briefs & Execution Prompt Directives
+PROCEED.md
+project_brief_guidelines.md

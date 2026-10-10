@@ -1,0 +1,292 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3200 2000" width="3200" height="2000">
+  <defs>
+    <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#94A3B8"/>
+    </marker>
+  </defs>
+  <rect width="3200" height="2000" fill="#0F172A"/>
+  <path d="M 358.0 382.0 Q 592.6 512.5 827.2 605.5" stroke="#10B981" stroke-width="9.0" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 358.0 568.0 Q 592.6 605.5 827.2 605.5" stroke="#10B981" stroke-width="9.1" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 358.0 773.5 Q 592.6 892.8 827.2 974.5" stroke="#EA580C" stroke-width="9.0" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 358.0 1010.5 Q 592.6 1011.3 827.2 974.5" stroke="#EA580C" stroke-width="8.0" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 358.0 1235.5 Q 592.6 1123.8 827.2 974.5" stroke="#EA580C" stroke-width="8.3" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 827.2 605.5 Q 827.2 1009.8 827.2 1414.0" stroke="#10B981" stroke-width="9.5" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 827.2 974.5 Q 827.2 1194.2 827.2 1414.0" stroke="#EA580C" stroke-width="9.3" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 827.2 1414.0 Q 1048.0 1090.7 1268.8 732.0" stroke="#10B981" stroke-width="9.1" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 827.2 1414.0 Q 1048.0 1356.4 1268.8 1263.5" stroke="#10B981" stroke-width="9.6" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 1268.8 1263.5 Q 1462.0 1147.2 1655.2 1000.0" stroke="#10B981" stroke-width="9.6" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 358.0 1424.5 Q 1006.6 1264.1 1655.2 1000.0" stroke="#3B82F6" stroke-width="9.3" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 358.0 1610.5 Q 1006.6 1357.1 1655.2 1000.0" stroke="#3B82F6" stroke-width="8.6" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 1655.2 1000.0 Q 1876.0 702.2 2096.8 369.2" stroke="#3B82F6" stroke-width="9.1" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 1655.2 1000.0 Q 1876.0 798.6 2096.8 561.8" stroke="#3B82F6" stroke-width="8.5" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 1655.2 1000.0 Q 1876.0 888.9 2096.8 742.5" stroke="#3B82F6" stroke-width="8.6" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 1655.2 1000.0 Q 1876.0 958.2 2096.8 881.2" stroke="#3B82F6" stroke-width="8.1" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 1655.2 1000.0 Q 1876.0 1069.6 2096.8 1103.8" stroke="#3B82F6" stroke-width="8.4" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 1655.2 1000.0 Q 1876.0 1149.4 2096.8 1263.5" stroke="#3B82F6" stroke-width="8.0" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 1655.2 1000.0 Q 1876.0 1241.2 2096.8 1447.2" stroke="#3B82F6" stroke-width="8.0" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 1655.2 1000.0 Q 1876.0 1357.8 2096.8 1680.3" stroke="#3B82F6" stroke-width="9.3" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 2096.8 561.8 Q 2428.0 440.8 2759.2 266.8" stroke="#A855F7" stroke-width="8.5" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 2759.2 266.8 Q 2759.2 320.2 2759.2 373.7" stroke="#A855F7" stroke-width="7.9" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 2759.2 266.8 Q 2759.2 346.7 2759.2 426.5" stroke="#A855F7" stroke-width="8.2" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 2096.8 742.5 Q 2428.0 665.9 2759.2 536.3" stroke="#3B82F6" stroke-width="8.2" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 2096.8 742.5 Q 2428.0 755.5 2759.2 715.5" stroke="#3B82F6" stroke-width="8.1" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 2096.8 742.5 Q 2428.0 805.9 2759.2 816.3" stroke="#3B82F6" stroke-width="7.4" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 2759.2 536.3 Q 2759.2 569.5 2759.2 602.7" stroke="#3B82F6" stroke-width="7.8" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 2759.2 816.3 Q 2759.2 851.8 2759.2 887.2" stroke="#3B82F6" stroke-width="6.7" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 2096.8 881.2 Q 2428.0 966.3 2759.2 998.5" stroke="#EF4444" stroke-width="7.9" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 2096.8 881.2 Q 2428.0 1045.4 2759.2 1156.7" stroke="#EF4444" stroke-width="7.7" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 2759.2 998.5 Q 2759.2 1038.4 2759.2 1078.3" stroke="#EF4444" stroke-width="7.4" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 2759.2 1156.7 Q 2759.2 1225.8 2759.2 1295.0" stroke="#EF4444" stroke-width="7.2" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 2096.8 1103.8 Q 2428.0 1271.8 2759.2 1386.8" stroke="#EF4444" stroke-width="8.0" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 2096.8 1103.8 Q 2428.0 1360.7 2759.2 1564.5" stroke="#EF4444" stroke-width="7.8" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 2759.2 1386.8 Q 2759.2 1431.2 2759.2 1475.7" stroke="#EF4444" stroke-width="8.0" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 2759.2 1564.5 Q 2759.2 1619.4 2759.2 1674.3" stroke="#EF4444" stroke-width="7.8" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 2096.8 1263.5 Q 2428.0 1544.3 2759.2 1772.2" stroke="#10B981" stroke-width="7.4" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 2759.2 998.5 Q 2759.2 942.8 2759.2 887.2" stroke="#EF4444" stroke-width="6.6" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 358.0 1424.5 Q 1227.4 1153.1 2096.8 742.5" stroke="#3B82F6" stroke-width="8.6" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 358.0 1424.5 Q 1227.4 966.4 2096.8 369.2" stroke="#3B82F6" stroke-width="8.7" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 358.0 1424.5 Q 1227.4 1062.7 2096.8 561.8" stroke="#3B82F6" stroke-width="7.9" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 1268.8 732.0 Q 1682.8 839.7 2096.8 881.2" stroke="#10B981" stroke-width="8.3" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 1268.8 732.0 Q 1682.8 1030.9 2096.8 1263.5" stroke="#10B981" stroke-width="8.4" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 2096.8 1447.2 Q 2428.0 1249.3 2759.2 998.5" stroke="#EF4444" stroke-width="7.6" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 358.0 1610.5 Q 1227.4 1506.6 2096.8 1263.5" stroke="#3B82F6" stroke-width="7.8" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 358.0 1610.5 Q 1227.4 1246.1 2096.8 742.5" stroke="#3B82F6" stroke-width="8.0" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 358.0 1610.5 Q 1227.4 1715.0 2096.8 1680.3" stroke="#3B82F6" stroke-width="8.0" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 2759.2 536.3 Q 2759.2 625.9 2759.2 715.5" stroke="#3B82F6" stroke-width="7.0" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 2759.2 1386.8 Q 2428.0 1107.5 2096.8 881.2" stroke="#EF4444" stroke-width="7.9" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 2759.2 1156.7 Q 2759.2 1360.6 2759.2 1564.5" stroke="#EF4444" stroke-width="7.6" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 2096.8 561.8 Q 2096.8 652.2 2096.8 742.5" stroke="#A855F7" stroke-width="6.6" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 1268.8 1263.5 Q 1682.8 1388.5 2096.8 1447.2" stroke="#10B981" stroke-width="8.0" stroke-opacity="0.55" fill="none" marker-end="url(#arrow)"/>
+  <g id="node_corp_tax">
+    <circle cx="358.0" cy="382.0" r="21.0" fill="#10B981" fill-opacity="0.25"/>
+    <circle cx="358.0" cy="382.0" r="15.0" fill="#10B981" stroke="#FFFFFF" stroke-width="2.5"/>
+    <text x="383.0" y="380.0" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">Corporation Tax</text>
+    <text x="383.0" y="398.0" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="13">₹1,020,000 Cr | Cb:0.000</text>
+  </g>
+  <g id="node_income_tax">
+    <circle cx="358.0" cy="568.0" r="21.0" fill="#10B981" fill-opacity="0.25"/>
+    <circle cx="358.0" cy="568.0" r="15.0" fill="#10B981" stroke="#FFFFFF" stroke-width="2.5"/>
+    <text x="383.0" y="566.0" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">Personal Income Tax</text>
+    <text x="383.0" y="584.0" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="13">₹1,156,000 Cr | Cb:0.000</text>
+  </g>
+  <g id="node_gst">
+    <circle cx="358.0" cy="773.5" r="21.0" fill="#EA580C" fill-opacity="0.25"/>
+    <circle cx="358.0" cy="773.5" r="15.0" fill="#EA580C" stroke="#FFFFFF" stroke-width="2.5"/>
+    <text x="383.0" y="771.5" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">Goods & Services Tax (GST)</text>
+    <text x="383.0" y="789.5" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="13">₹1,067,650 Cr | Cb:0.000</text>
+  </g>
+  <g id="node_customs">
+    <circle cx="358.0" cy="1010.5" r="21.0" fill="#EA580C" fill-opacity="0.25"/>
+    <circle cx="358.0" cy="1010.5" r="15.0" fill="#EA580C" stroke="#FFFFFF" stroke-width="2.5"/>
+    <text x="383.0" y="1008.5" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">Customs Duty</text>
+    <text x="383.0" y="1026.5" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="13">₹231,700 Cr | Cb:0.000</text>
+  </g>
+  <g id="node_excise">
+    <circle cx="358.0" cy="1235.5" r="21.0" fill="#EA580C" fill-opacity="0.25"/>
+    <circle cx="358.0" cy="1235.5" r="15.0" fill="#EA580C" stroke="#FFFFFF" stroke-width="2.5"/>
+    <text x="383.0" y="1233.5" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">Union Excise Duties</text>
+    <text x="383.0" y="1251.5" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="13">₹318,780 Cr | Cb:0.000</text>
+  </g>
+  <g id="node_borrowings">
+    <circle cx="358.0" cy="1424.5" r="21.0" fill="#3B82F6" fill-opacity="0.25"/>
+    <circle cx="358.0" cy="1424.5" r="15.0" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2.5"/>
+    <text x="383.0" y="1422.5" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">Fiscal Deficit Borrowings</text>
+    <text x="383.0" y="1440.5" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="13">₹1,613,312 Cr | Cb:0.000</text>
+  </g>
+  <g id="node_non_tax">
+    <circle cx="358.0" cy="1610.5" r="21.0" fill="#3B82F6" fill-opacity="0.25"/>
+    <circle cx="358.0" cy="1610.5" r="15.0" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2.5"/>
+    <text x="383.0" y="1608.5" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">Non-Tax Receipts (RBI/Dividends)</text>
+    <text x="383.0" y="1626.5" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="13">₹562,692 Cr | Cb:0.000</text>
+  </g>
+  <g id="node_direct_tax">
+    <circle cx="827.2" cy="605.5" r="24.0" fill="#10B981" fill-opacity="0.25"/>
+    <circle cx="827.2" cy="605.5" r="18.0" fill="#10B981" stroke="#FFFFFF" stroke-width="2.5"/>
+    <text x="855.2" y="603.5" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">Direct Taxes Pool</text>
+    <text x="855.2" y="621.5" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="13">₹2,176,000 Cr | Cb:0.043</text>
+  </g>
+  <g id="node_indirect_tax">
+    <circle cx="827.2" cy="974.5" r="25.6" fill="#EA580C" fill-opacity="0.25"/>
+    <circle cx="827.2" cy="974.5" r="19.6" fill="#EA580C" stroke="#FFFFFF" stroke-width="2.5"/>
+    <text x="856.8" y="972.5" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">Indirect Taxes Pool</text>
+    <text x="856.8" y="990.5" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="13">₹1,618,130 Cr | Cb:0.065</text>
+  </g>
+  <g id="node_gross_tax">
+    <circle cx="827.2" cy="1414.0" r="31.3" fill="#10B981" fill-opacity="0.25"/>
+    <circle cx="827.2" cy="1414.0" r="25.3" fill="#10B981" stroke="#FFFFFF" stroke-width="2.5"/>
+    <text x="862.5" y="1412.0" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">Gross Tax Revenue</text>
+    <text x="862.5" y="1430.0" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="13">₹3,794,130 Cr | Cb:0.147</text>
+  </g>
+  <g id="node_devolution">
+    <circle cx="1268.8" cy="732.0" r="25.2" fill="#10B981" fill-opacity="0.25"/>
+    <circle cx="1268.8" cy="732.0" r="19.2" fill="#10B981" stroke="#FFFFFF" stroke-width="2.5"/>
+    <text x="1298.0" y="730.0" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">States Devolution (41% FC Pool)</text>
+    <text x="1298.0" y="748.0" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="13">₹1,219,783 Cr | Cb:0.060</text>
+  </g>
+  <g id="node_net_tax">
+    <circle cx="1268.8" cy="1263.5" r="27.7" fill="#10B981" fill-opacity="0.25"/>
+    <circle cx="1268.8" cy="1263.5" r="21.7" fill="#10B981" stroke="#FFFFFF" stroke-width="2.5"/>
+    <text x="1300.5" y="1261.5" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">Net Tax to Centre</text>
+    <text x="1300.5" y="1279.5" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="13">₹2,574,347 Cr | Cb:0.096</text>
+  </g>
+  <g id="node_central_pool">
+    <circle cx="1655.2" cy="1000.0" r="29.6" fill="#3B82F6" fill-opacity="0.25"/>
+    <circle cx="1655.2" cy="1000.0" r="23.6" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2.5"/>
+    <text x="1688.8" y="998.0" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">Consolidated Fund of India (CFI)</text>
+    <text x="1688.8" y="1016.0" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="13">₹4,750,351 Cr | Cb:0.122</text>
+  </g>
+  <g id="node_interest">
+    <circle cx="2096.8" cy="369.2" r="21.0" fill="#3B82F6" fill-opacity="0.25"/>
+    <circle cx="2096.8" cy="369.2" r="15.0" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2.5"/>
+    <text x="2121.8" y="367.2" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">Debt Servicing (Interest Payments)</text>
+    <text x="2121.8" y="385.2" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="13">₹1,162,940 Cr | Cb:0.000</text>
+  </g>
+  <g id="node_defense">
+    <circle cx="2096.8" cy="561.8" r="25.8" fill="#A855F7" fill-opacity="0.25"/>
+    <circle cx="2096.8" cy="561.8" r="19.8" fill="#A855F7" stroke="#FFFFFF" stroke-width="2.5"/>
+    <text x="2126.6" y="559.8" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">Defense & National Security</text>
+    <text x="2126.6" y="577.8" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="13">₹454,773 Cr | Cb:0.069</text>
+  </g>
+  <g id="node_infra">
+    <circle cx="2096.8" cy="742.5" r="23.9" fill="#3B82F6" fill-opacity="0.25"/>
+    <circle cx="2096.8" cy="742.5" r="17.9" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2.5"/>
+    <text x="2124.7" y="740.5" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">Transport & Infrastructure</text>
+    <text x="2124.7" y="758.5" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="13">₹544,000 Cr | Cb:0.041</text>
+  </g>
+  <g id="node_rural_agri">
+    <circle cx="2096.8" cy="881.2" r="25.8" fill="#EF4444" fill-opacity="0.25"/>
+    <circle cx="2096.8" cy="881.2" r="19.8" fill="#EF4444" stroke="#FFFFFF" stroke-width="2.5"/>
+    <text x="2126.6" y="879.2" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">Agri & Rural Development</text>
+    <text x="2126.6" y="897.2" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="13">₹265,808 Cr | Cb:0.068</text>
+  </g>
+  <g id="node_subsidies">
+    <circle cx="2096.8" cy="1103.8" r="22.3" fill="#EF4444" fill-opacity="0.25"/>
+    <circle cx="2096.8" cy="1103.8" r="16.3" fill="#EF4444" stroke="#FFFFFF" stroke-width="2.5"/>
+    <text x="2123.1" y="1101.8" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">Major Subsidies (Food & Fert)</text>
+    <text x="2123.1" y="1119.8" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="13">₹381,175 Cr | Cb:0.018</text>
+  </g>
+  <g id="node_social">
+    <circle cx="2096.8" cy="1263.5" r="21.7" fill="#10B981" fill-opacity="0.25"/>
+    <circle cx="2096.8" cy="1263.5" r="15.7" fill="#10B981" stroke="#FFFFFF" stroke-width="2.5"/>
+    <text x="2122.5" y="1261.5" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">Education & Health Human Capital</text>
+    <text x="2122.5" y="1279.5" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="13">₹212,450 Cr | Cb:0.010</text>
+  </g>
+  <g id="node_transfers_grants">
+    <circle cx="2096.8" cy="1447.2" r="21.5" fill="#EF4444" fill-opacity="0.25"/>
+    <circle cx="2096.8" cy="1447.2" r="15.5" fill="#EF4444" stroke="#FFFFFF" stroke-width="2.5"/>
+    <text x="2122.3" y="1445.2" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">Finance Commission Grants</text>
+    <text x="2122.3" y="1463.2" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="13">₹232,000 Cr | Cb:0.007</text>
+  </g>
+  <g id="node_other_exp">
+    <circle cx="2096.8" cy="1680.3" r="21.0" fill="#3B82F6" fill-opacity="0.25"/>
+    <circle cx="2096.8" cy="1680.3" r="15.0" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2.5"/>
+    <text x="2121.8" y="1678.3" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">General Admin & Organs of State</text>
+    <text x="2121.8" y="1696.3" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="13">₹1,497,205 Cr | Cb:0.000</text>
+  </g>
+  <g id="node_mod">
+    <circle cx="2759.2" cy="266.8" r="22.4" fill="#A855F7" fill-opacity="0.25"/>
+    <circle cx="2759.2" cy="266.8" r="16.4" fill="#A855F7" stroke="#FFFFFF" stroke-width="2.5"/>
+    <text x="2785.6" y="264.8" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">Ministry of Defence</text>
+    <text x="2785.6" y="282.8" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="13">₹454,773 Cr | Cb:0.019</text>
+  </g>
+  <g id="node_def_capex">
+    <circle cx="2759.2" cy="373.7" r="21.0" fill="#A855F7" fill-opacity="0.25"/>
+    <circle cx="2759.2" cy="373.7" r="15.0" fill="#A855F7" stroke="#FFFFFF" stroke-width="2.5"/>
+    <text x="2784.2" y="371.7" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">Defense Modernization Capex</text>
+    <text x="2784.2" y="389.7" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="13">₹172,000 Cr | Cb:0.000</text>
+  </g>
+  <g id="node_def_salaries">
+    <circle cx="2759.2" cy="426.5" r="21.0" fill="#A855F7" fill-opacity="0.25"/>
+    <circle cx="2759.2" cy="426.5" r="15.0" fill="#A855F7" stroke="#FFFFFF" stroke-width="2.5"/>
+    <text x="2784.2" y="424.5" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">Defense Revenue & Pensions</text>
+    <text x="2784.2" y="442.5" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="13">₹282,773 Cr | Cb:0.000</text>
+  </g>
+  <g id="node_morth">
+    <circle cx="2759.2" cy="536.3" r="21.7" fill="#3B82F6" fill-opacity="0.25"/>
+    <circle cx="2759.2" cy="536.3" r="15.7" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2.5"/>
+    <text x="2784.9" y="534.3" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">Ministry of Road Transport & Highways</text>
+    <text x="2784.9" y="552.3" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="13">₹278,000 Cr | Cb:0.011</text>
+  </g>
+  <g id="node_nhai">
+    <circle cx="2759.2" cy="602.7" r="21.0" fill="#3B82F6" fill-opacity="0.25"/>
+    <circle cx="2759.2" cy="602.7" r="15.0" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2.5"/>
+    <text x="2784.2" y="600.7" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">NHAI Expressways & Highways</text>
+    <text x="2784.2" y="618.7" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="13">₹168,464 Cr | Cb:0.000</text>
+  </g>
+  <g id="node_railways">
+    <circle cx="2759.2" cy="715.5" r="21.0" fill="#3B82F6" fill-opacity="0.25"/>
+    <circle cx="2759.2" cy="715.5" r="15.0" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2.5"/>
+    <text x="2784.2" y="713.5" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">Indian Railways Capital Outlay</text>
+    <text x="2784.2" y="731.5" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="13">₹252,200 Cr | Cb:0.000</text>
+  </g>
+  <g id="node_mohua">
+    <circle cx="2759.2" cy="816.3" r="21.2" fill="#3B82F6" fill-opacity="0.25"/>
+    <circle cx="2759.2" cy="816.3" r="15.2" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2.5"/>
+    <text x="2784.4" y="814.3" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">Ministry of Housing & Urban Affairs</text>
+    <text x="2784.4" y="832.3" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="13">₹82,577 Cr | Cb:0.003</text>
+  </g>
+  <g id="node_pmay">
+    <circle cx="2759.2" cy="887.2" r="21.0" fill="#EF4444" fill-opacity="0.25"/>
+    <circle cx="2759.2" cy="887.2" r="15.0" fill="#EF4444" stroke="#FFFFFF" stroke-width="2.5"/>
+    <text x="2784.2" y="885.2" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">Pradhan Mantri Awas Yojana (PMAY)</text>
+    <text x="2784.2" y="903.2" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="13">₹54,500 Cr | Cb:0.000</text>
+  </g>
+  <g id="node_mord">
+    <circle cx="2759.2" cy="998.5" r="22.7" fill="#EF4444" fill-opacity="0.25"/>
+    <circle cx="2759.2" cy="998.5" r="16.7" fill="#EF4444" stroke="#FFFFFF" stroke-width="2.5"/>
+    <text x="2785.9" y="996.5" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">Ministry of Rural Development</text>
+    <text x="2785.9" y="1014.5" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="13">₹177,566 Cr | Cb:0.024</text>
+  </g>
+  <g id="node_mgnrega">
+    <circle cx="2759.2" cy="1078.3" r="21.0" fill="#EF4444" fill-opacity="0.25"/>
+    <circle cx="2759.2" cy="1078.3" r="15.0" fill="#EF4444" stroke="#FFFFFF" stroke-width="2.5"/>
+    <text x="2784.2" y="1076.3" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">MGNREGA Rural Employment Guarantee</text>
+    <text x="2784.2" y="1094.3" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="13">₹86,000 Cr | Cb:0.000</text>
+  </g>
+  <g id="node_moa">
+    <circle cx="2759.2" cy="1156.7" r="23.4" fill="#EF4444" fill-opacity="0.25"/>
+    <circle cx="2759.2" cy="1156.7" r="17.4" fill="#EF4444" stroke="#FFFFFF" stroke-width="2.5"/>
+    <text x="2786.6" y="1154.7" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">Ministry of Agriculture & Farmers Welfare</text>
+    <text x="2786.6" y="1172.7" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="13">₹132,000 Cr | Cb:0.035</text>
+  </g>
+  <g id="node_pm_kisan">
+    <circle cx="2759.2" cy="1295.0" r="21.0" fill="#EF4444" fill-opacity="0.25"/>
+    <circle cx="2759.2" cy="1295.0" r="15.0" fill="#EF4444" stroke="#FFFFFF" stroke-width="2.5"/>
+    <text x="2784.2" y="1293.0" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">PM-KISAN Direct Income Support</text>
+    <text x="2784.2" y="1311.0" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="13">₹60,000 Cr | Cb:0.000</text>
+  </g>
+  <g id="node_food_pds">
+    <circle cx="2759.2" cy="1386.8" r="22.0" fill="#EF4444" fill-opacity="0.25"/>
+    <circle cx="2759.2" cy="1386.8" r="16.0" fill="#EF4444" stroke="#FFFFFF" stroke-width="2.5"/>
+    <text x="2785.2" y="1384.8" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">Dept of Food & Public Distribution</text>
+    <text x="2785.2" y="1402.8" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="13">₹213,000 Cr | Cb:0.014</text>
+  </g>
+  <g id="node_nfsa_food">
+    <circle cx="2759.2" cy="1475.7" r="21.0" fill="#EF4444" fill-opacity="0.25"/>
+    <circle cx="2759.2" cy="1475.7" r="15.0" fill="#EF4444" stroke="#FFFFFF" stroke-width="2.5"/>
+    <text x="2784.2" y="1473.7" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">NFSA Food Subsidy (PDS)</text>
+    <text x="2784.2" y="1491.7" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="13">₹205,250 Cr | Cb:0.000</text>
+  </g>
+  <g id="node_fert_dept">
+    <circle cx="2759.2" cy="1564.5" r="21.9" fill="#EF4444" fill-opacity="0.25"/>
+    <circle cx="2759.2" cy="1564.5" r="15.9" fill="#EF4444" stroke="#FFFFFF" stroke-width="2.5"/>
+    <text x="2785.1" y="1562.5" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">Department of Fertilizers</text>
+    <text x="2785.1" y="1580.5" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="13">₹168,000 Cr | Cb:0.013</text>
+  </g>
+  <g id="node_fert_sub">
+    <circle cx="2759.2" cy="1674.3" r="21.0" fill="#EF4444" fill-opacity="0.25"/>
+    <circle cx="2759.2" cy="1674.3" r="15.0" fill="#EF4444" stroke="#FFFFFF" stroke-width="2.5"/>
+    <text x="2784.2" y="1672.3" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">Fertilizer Subsidy (Urea & NBS)</text>
+    <text x="2784.2" y="1690.3" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="13">₹164,000 Cr | Cb:0.000</text>
+  </g>
+  <g id="node_mohfw_health">
+    <circle cx="2759.2" cy="1772.2" r="21.0" fill="#10B981" fill-opacity="0.25"/>
+    <circle cx="2759.2" cy="1772.2" r="15.0" fill="#10B981" stroke="#FFFFFF" stroke-width="2.5"/>
+    <text x="2784.2" y="1770.2" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="16" font-weight="bold">Ministry of Health & Family Welfare</text>
+    <text x="2784.2" y="1788.2" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="13">₹90,659 Cr | Cb:0.000</text>
+  </g>
+</svg>

@@ -1,0 +1,743 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gexf xmlns="http://www.gexf.net/1.3draft"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:viz="http://www.gexf.net/1.3draft/viz"
+      xsi:schemaLocation="http://www.gexf.net/1.3draft http://www.gexf.net/1.3draft/gexf.xsd"
+      version="1.3">
+  <meta lastmodifieddate="2026-10-10">
+    <creator>FiscalFiles Preprocessing Engine (Compliance Audit)</creator>
+    <description>India Union Budget Fiscal Flow Network with ForceAtlas2 & Louvain encodings</description>
+  </meta>
+  <graph defaultedgetype="directed" mode="static">
+    <attributes class="node" mode="static">
+      <attribute id="0" title="Category" type="string"/>
+      <attribute id="1" title="Tier" type="integer"/>
+      <attribute id="2" title="Budget_Crore" type="double"/>
+      <attribute id="3" title="Betweenness_Centrality" type="double"/>
+      <attribute id="4" title="Modularity_Class" type="integer"/>
+    </attributes>
+    <attributes class="edge" mode="static">
+      <attribute id="0" title="Relation" type="string"/>
+    </attributes>
+    <nodes>
+      <node id="corp_tax" label="Corporation Tax">
+        <attvalues>
+          <attvalue for="0" value="Direct Tax"/>
+          <attvalue for="1" value="1"/>
+          <attvalue for="2" value="1020000.0"/>
+          <attvalue for="3" value="0.0"/>
+          <attvalue for="4" value="1"/>
+        </attvalues>
+        <viz:size value="15.00"/>
+        <viz:position x="-584.40" y="-295.57" z="0.0"/>
+        <viz:color r="16" g="185" b="129" a="0.9"/>
+      </node>
+      <node id="income_tax" label="Personal Income Tax">
+        <attvalues>
+          <attvalue for="0" value="Direct Tax"/>
+          <attvalue for="1" value="1"/>
+          <attvalue for="2" value="1156000.0"/>
+          <attvalue for="3" value="0.0"/>
+          <attvalue for="4" value="1"/>
+        </attvalues>
+        <viz:size value="15.00"/>
+        <viz:position x="-602.40" y="-207.71" z="0.0"/>
+        <viz:color r="16" g="185" b="129" a="0.9"/>
+      </node>
+      <node id="gst" label="Goods & Services Tax (GST)">
+        <attvalues>
+          <attvalue for="0" value="Indirect Tax"/>
+          <attvalue for="1" value="1"/>
+          <attvalue for="2" value="1067650.0"/>
+          <attvalue for="3" value="0.0"/>
+          <attvalue for="4" value="0"/>
+        </attvalues>
+        <viz:size value="15.00"/>
+        <viz:position x="-604.80" y="-106.86" z="0.0"/>
+        <viz:color r="234" g="88" b="12" a="0.9"/>
+      </node>
+      <node id="customs" label="Customs Duty">
+        <attvalues>
+          <attvalue for="0" value="Indirect Tax"/>
+          <attvalue for="1" value="1"/>
+          <attvalue for="2" value="231700.0"/>
+          <attvalue for="3" value="0.0"/>
+          <attvalue for="4" value="0"/>
+        </attvalues>
+        <viz:size value="15.00"/>
+        <viz:position x="-610.80" y="-9.00" z="0.0"/>
+        <viz:color r="234" g="88" b="12" a="0.9"/>
+      </node>
+      <node id="excise" label="Union Excise Duties">
+        <attvalues>
+          <attvalue for="0" value="Indirect Tax"/>
+          <attvalue for="1" value="1"/>
+          <attvalue for="2" value="318780.0"/>
+          <attvalue for="3" value="0.0"/>
+          <attvalue for="4" value="0"/>
+        </attvalues>
+        <viz:size value="15.00"/>
+        <viz:position x="-577.20" y="121.86" z="0.0"/>
+        <viz:color r="234" g="88" b="12" a="0.9"/>
+      </node>
+      <node id="borrowings" label="Fiscal Deficit Borrowings">
+        <attvalues>
+          <attvalue for="0" value="Capital Inflow"/>
+          <attvalue for="1" value="1"/>
+          <attvalue for="2" value="1613312.0"/>
+          <attvalue for="3" value="0.0"/>
+          <attvalue for="4" value="2"/>
+        </attvalues>
+        <viz:size value="15.00"/>
+        <viz:position x="-622.80" y="186.71" z="0.0"/>
+        <viz:color r="59" g="130" b="246" a="0.9"/>
+      </node>
+      <node id="non_tax" label="Non-Tax Receipts (RBI/Dividends)">
+        <attvalues>
+          <attvalue for="0" value="Non-Tax Revenue"/>
+          <attvalue for="1" value="1"/>
+          <attvalue for="2" value="562692.0"/>
+          <attvalue for="3" value="0.0"/>
+          <attvalue for="4" value="2"/>
+        </attvalues>
+        <viz:size value="15.00"/>
+        <viz:position x="-584.40" y="321.57" z="0.0"/>
+        <viz:color r="59" g="130" b="246" a="0.9"/>
+      </node>
+      <node id="direct_tax" label="Direct Taxes Pool">
+        <attvalues>
+          <attvalue for="0" value="Tax Pool"/>
+          <attvalue for="1" value="2"/>
+          <attvalue for="2" value="2176000.0"/>
+          <attvalue for="3" value="0.0435"/>
+          <attvalue for="4" value="1"/>
+        </attvalues>
+        <viz:size value="18.26"/>
+        <viz:position x="-314.80" y="-219.00" z="0.0"/>
+        <viz:color r="16" g="185" b="129" a="0.9"/>
+      </node>
+      <node id="indirect_tax" label="Indirect Taxes Pool">
+        <attvalues>
+          <attvalue for="0" value="Tax Pool"/>
+          <attvalue for="1" value="2"/>
+          <attvalue for="2" value="1618130.0"/>
+          <attvalue for="3" value="0.0653"/>
+          <attvalue for="4" value="0"/>
+        </attvalues>
+        <viz:size value="19.90"/>
+        <viz:position x="-319.60" y="17.00" z="0.0"/>
+        <viz:color r="234" g="88" b="12" a="0.9"/>
+      </node>
+      <node id="gross_tax" label="Gross Tax Revenue">
+        <attvalues>
+          <attvalue for="0" value="Macro Hub"/>
+          <attvalue for="1" value="2"/>
+          <attvalue for="2" value="3794130.0"/>
+          <attvalue for="3" value="0.1471"/>
+          <attvalue for="4" value="1"/>
+        </attvalues>
+        <viz:size value="26.03"/>
+        <viz:position x="-319.60" y="257.00" z="0.0"/>
+        <viz:color r="16" g="185" b="129" a="0.9"/>
+      </node>
+      <node id="devolution" label="States Devolution (41% FC Pool)">
+        <attvalues>
+          <attvalue for="0" value="Constitutional Devolution"/>
+          <attvalue for="1" value="3"/>
+          <attvalue for="2" value="1219783.0"/>
+          <attvalue for="3" value="0.0601"/>
+          <attvalue for="4" value="1"/>
+        </attvalues>
+        <viz:size value="19.51"/>
+        <viz:position x="-101.20" y="-181.00" z="0.0"/>
+        <viz:color r="16" g="185" b="129" a="0.9"/>
+      </node>
+      <node id="net_tax" label="Net Tax to Centre">
+        <attvalues>
+          <attvalue for="0" value="Central Revenue"/>
+          <attvalue for="1" value="3"/>
+          <attvalue for="2" value="2574347.0"/>
+          <attvalue for="3" value="0.0961"/>
+          <attvalue for="4" value="1"/>
+        </attvalues>
+        <viz:size value="22.21"/>
+        <viz:position x="-74.80" y="201.00" z="0.0"/>
+        <viz:color r="16" g="185" b="129" a="0.9"/>
+      </node>
+      <node id="central_pool" label="Consolidated Fund of India (CFI)">
+        <attvalues>
+          <attvalue for="0" value="Sovereign Treasury"/>
+          <attvalue for="1" value="4"/>
+          <attvalue for="2" value="4750351.0"/>
+          <attvalue for="3" value="0.1224"/>
+          <attvalue for="4" value="2"/>
+        </attvalues>
+        <viz:size value="24.18"/>
+        <viz:position x="101.20" y="1.00" z="0.0"/>
+        <viz:color r="59" g="130" b="246" a="0.9"/>
+      </node>
+      <node id="interest" label="Debt Servicing (Interest Payments)">
+        <attvalues>
+          <attvalue for="0" value="Sovereign Obligation"/>
+          <attvalue for="1" value="5"/>
+          <attvalue for="2" value="1162940.0"/>
+          <attvalue for="3" value="0.0"/>
+          <attvalue for="4" value="2"/>
+        </attvalues>
+        <viz:size value="15.00"/>
+        <viz:position x="386.40" y="-293.00" z="0.0"/>
+        <viz:color r="59" g="130" b="246" a="0.9"/>
+      </node>
+      <node id="defense" label="Defense & National Security">
+        <attvalues>
+          <attvalue for="0" value="Strategic Defense"/>
+          <attvalue for="1" value="5"/>
+          <attvalue for="2" value="454773.0"/>
+          <attvalue for="3" value="0.0691"/>
+          <attvalue for="4" value="3"/>
+        </attvalues>
+        <viz:size value="20.18"/>
+        <viz:position x="346.80" y="-236.00" z="0.0"/>
+        <viz:color r="168" g="85" b="247" a="0.9"/>
+      </node>
+      <node id="infra" label="Transport & Infrastructure">
+        <attvalues>
+          <attvalue for="0" value="Capital Infrastructure"/>
+          <attvalue for="1" value="5"/>
+          <attvalue for="2" value="544000.0"/>
+          <attvalue for="3" value="0.0413"/>
+          <attvalue for="4" value="2"/>
+        </attvalues>
+        <viz:size value="18.10"/>
+        <viz:position x="348.00" y="-145.00" z="0.0"/>
+        <viz:color r="59" g="130" b="246" a="0.9"/>
+      </node>
+      <node id="rural_agri" label="Agri & Rural Development">
+        <attvalues>
+          <attvalue for="0" value="Rural & Agrarian"/>
+          <attvalue for="1" value="5"/>
+          <attvalue for="2" value="265808.0"/>
+          <attvalue for="3" value="0.0683"/>
+          <attvalue for="4" value="4"/>
+        </attvalues>
+        <viz:size value="20.12"/>
+        <viz:position x="349.20" y="-54.00" z="0.0"/>
+        <viz:color r="239" g="68" b="68" a="0.9"/>
+      </node>
+      <node id="subsidies" label="Major Subsidies (Food & Fert)">
+        <attvalues>
+          <attvalue for="0" value="Social Safety Net"/>
+          <attvalue for="1" value="5"/>
+          <attvalue for="2" value="381175.0"/>
+          <attvalue for="3" value="0.018"/>
+          <attvalue for="4" value="4"/>
+        </attvalues>
+        <viz:size value="16.35"/>
+        <viz:position x="387.60" y="68.00" z="0.0"/>
+        <viz:color r="239" g="68" b="68" a="0.9"/>
+      </node>
+      <node id="social" label="Education & Health Human Capital">
+        <attvalues>
+          <attvalue for="0" value="Human Capital"/>
+          <attvalue for="1" value="5"/>
+          <attvalue for="2" value="212450.0"/>
+          <attvalue for="3" value="0.0098"/>
+          <attvalue for="4" value="1"/>
+        </attvalues>
+        <viz:size value="15.73"/>
+        <viz:position x="382.80" y="154.00" z="0.0"/>
+        <viz:color r="16" g="185" b="129" a="0.9"/>
+      </node>
+      <node id="transfers_grants" label="Finance Commission Grants">
+        <attvalues>
+          <attvalue for="0" value="Intergovernmental"/>
+          <attvalue for="1" value="5"/>
+          <attvalue for="2" value="232000.0"/>
+          <attvalue for="3" value="0.0075"/>
+          <attvalue for="4" value="4"/>
+        </attvalues>
+        <viz:size value="15.56"/>
+        <viz:position x="368.40" y="232.00" z="0.0"/>
+        <viz:color r="239" g="68" b="68" a="0.9"/>
+      </node>
+      <node id="other_exp" label="General Admin & Organs of State">
+        <attvalues>
+          <attvalue for="0" value="Public Administration"/>
+          <attvalue for="1" value="5"/>
+          <attvalue for="2" value="1497205.0"/>
+          <attvalue for="3" value="0.0"/>
+          <attvalue for="4" value="2"/>
+        </attvalues>
+        <viz:size value="15.00"/>
+        <viz:position x="349.20" y="306.00" z="0.0"/>
+        <viz:color r="59" g="130" b="246" a="0.9"/>
+      </node>
+      <node id="mod" label="Ministry of Defence">
+        <attvalues>
+          <attvalue for="0" value="Strategic Defense"/>
+          <attvalue for="1" value="6"/>
+          <attvalue for="2" value="454773.0"/>
+          <attvalue for="3" value="0.0195"/>
+          <attvalue for="4" value="3"/>
+        </attvalues>
+        <viz:size value="16.46"/>
+        <viz:position x="650.40" y="-346.82" z="0.0"/>
+        <viz:color r="168" g="85" b="247" a="0.9"/>
+      </node>
+      <node id="def_capex" label="Defense Modernization Capex">
+        <attvalues>
+          <attvalue for="0" value="Strategic Defense"/>
+          <attvalue for="1" value="6"/>
+          <attvalue for="2" value="172000.0"/>
+          <attvalue for="3" value="0.0"/>
+          <attvalue for="4" value="3"/>
+        </attvalues>
+        <viz:size value="15.00"/>
+        <viz:position x="658.80" y="-297.47" z="0.0"/>
+        <viz:color r="168" g="85" b="247" a="0.9"/>
+      </node>
+      <node id="def_salaries" label="Defense Revenue & Pensions">
+        <attvalues>
+          <attvalue for="0" value="Strategic Defense"/>
+          <attvalue for="1" value="6"/>
+          <attvalue for="2" value="282773.0"/>
+          <attvalue for="3" value="0.0"/>
+          <attvalue for="4" value="3"/>
+        </attvalues>
+        <viz:size value="15.00"/>
+        <viz:position x="643.20" y="-268.12" z="0.0"/>
+        <viz:color r="168" g="85" b="247" a="0.9"/>
+      </node>
+      <node id="morth" label="Ministry of Road Transport & Highways">
+        <attvalues>
+          <attvalue for="0" value="Capital Infrastructure"/>
+          <attvalue for="1" value="6"/>
+          <attvalue for="2" value="278000.0"/>
+          <attvalue for="3" value="0.0105"/>
+          <attvalue for="4" value="2"/>
+        </attvalues>
+        <viz:size value="15.79"/>
+        <viz:position x="675.60" y="-198.76" z="0.0"/>
+        <viz:color r="59" g="130" b="246" a="0.9"/>
+      </node>
+      <node id="nhai" label="NHAI Expressways & Highways">
+        <attvalues>
+          <attvalue for="0" value="Capital Infrastructure"/>
+          <attvalue for="1" value="6"/>
+          <attvalue for="2" value="168464.0"/>
+          <attvalue for="3" value="0.0"/>
+          <attvalue for="4" value="2"/>
+        </attvalues>
+        <viz:size value="15.00"/>
+        <viz:position x="655.20" y="-173.41" z="0.0"/>
+        <viz:color r="59" g="130" b="246" a="0.9"/>
+      </node>
+      <node id="railways" label="Indian Railways Capital Outlay">
+        <attvalues>
+          <attvalue for="0" value="Capital Infrastructure"/>
+          <attvalue for="1" value="6"/>
+          <attvalue for="2" value="252200.0"/>
+          <attvalue for="3" value="0.0"/>
+          <attvalue for="4" value="2"/>
+        </attvalues>
+        <viz:size value="15.00"/>
+        <viz:position x="637.20" y="-146.06" z="0.0"/>
+        <viz:color r="59" g="130" b="246" a="0.9"/>
+      </node>
+      <node id="mohua" label="Ministry of Housing & Urban Affairs">
+        <attvalues>
+          <attvalue for="0" value="Capital Infrastructure"/>
+          <attvalue for="1" value="6"/>
+          <attvalue for="2" value="82577.0"/>
+          <attvalue for="3" value="0.003"/>
+          <attvalue for="4" value="2"/>
+        </attvalues>
+        <viz:size value="15.22"/>
+        <viz:position x="646.80" y="-95.71" z="0.0"/>
+        <viz:color r="59" g="130" b="246" a="0.9"/>
+      </node>
+      <node id="pmay" label="Pradhan Mantri Awas Yojana (PMAY)">
+        <attvalues>
+          <attvalue for="0" value="Social Safety Net"/>
+          <attvalue for="1" value="6"/>
+          <attvalue for="2" value="54500.0"/>
+          <attvalue for="3" value="0.0"/>
+          <attvalue for="4" value="4"/>
+        </attvalues>
+        <viz:size value="15.00"/>
+        <viz:position x="645.60" y="-54.35" z="0.0"/>
+        <viz:color r="239" g="68" b="68" a="0.9"/>
+      </node>
+      <node id="mord" label="Ministry of Rural Development">
+        <attvalues>
+          <attvalue for="0" value="Rural & Agrarian"/>
+          <attvalue for="1" value="6"/>
+          <attvalue for="2" value="177566.0"/>
+          <attvalue for="3" value="0.024"/>
+          <attvalue for="4" value="4"/>
+        </attvalues>
+        <viz:size value="16.80"/>
+        <viz:position x="639.60" y="-17.00" z="0.0"/>
+        <viz:color r="239" g="68" b="68" a="0.9"/>
+      </node>
+      <node id="mgnrega" label="MGNREGA Rural Employment Guarantee">
+        <attvalues>
+          <attvalue for="0" value="Rural & Agrarian"/>
+          <attvalue for="1" value="6"/>
+          <attvalue for="2" value="86000.0"/>
+          <attvalue for="3" value="0.0"/>
+          <attvalue for="4" value="4"/>
+        </attvalues>
+        <viz:size value="15.00"/>
+        <viz:position x="658.80" y="41.35" z="0.0"/>
+        <viz:color r="239" g="68" b="68" a="0.9"/>
+      </node>
+      <node id="moa" label="Ministry of Agriculture & Farmers Welfare">
+        <attvalues>
+          <attvalue for="0" value="Rural & Agrarian"/>
+          <attvalue for="1" value="6"/>
+          <attvalue for="2" value="132000.0"/>
+          <attvalue for="3" value="0.0345"/>
+          <attvalue for="4" value="4"/>
+        </attvalues>
+        <viz:size value="17.59"/>
+        <viz:position x="636.00" y="64.71" z="0.0"/>
+        <viz:color r="239" g="68" b="68" a="0.9"/>
+      </node>
+      <node id="pm_kisan" label="PM-KISAN Direct Income Support">
+        <attvalues>
+          <attvalue for="0" value="Rural & Agrarian"/>
+          <attvalue for="1" value="6"/>
+          <attvalue for="2" value="60000.0"/>
+          <attvalue for="3" value="0.0"/>
+          <attvalue for="4" value="4"/>
+        </attvalues>
+        <viz:size value="15.00"/>
+        <viz:position x="655.20" y="123.06" z="0.0"/>
+        <viz:color r="239" g="68" b="68" a="0.9"/>
+      </node>
+      <node id="food_pds" label="Dept of Food & Public Distribution">
+        <attvalues>
+          <attvalue for="0" value="Social Safety Net"/>
+          <attvalue for="1" value="6"/>
+          <attvalue for="2" value="213000.0"/>
+          <attvalue for="3" value="0.0143"/>
+          <attvalue for="4" value="4"/>
+        </attvalues>
+        <viz:size value="16.07"/>
+        <viz:position x="632.40" y="146.41" z="0.0"/>
+        <viz:color r="239" g="68" b="68" a="0.9"/>
+      </node>
+      <node id="nfsa_food" label="NFSA Food Subsidy (PDS)">
+        <attvalues>
+          <attvalue for="0" value="Social Safety Net"/>
+          <attvalue for="1" value="6"/>
+          <attvalue for="2" value="205250.0"/>
+          <attvalue for="3" value="0.0"/>
+          <attvalue for="4" value="4"/>
+        </attvalues>
+        <viz:size value="15.00"/>
+        <viz:position x="658.80" y="210.76" z="0.0"/>
+        <viz:color r="239" g="68" b="68" a="0.9"/>
+      </node>
+      <node id="fert_dept" label="Department of Fertilizers">
+        <attvalues>
+          <attvalue for="0" value="Social Safety Net"/>
+          <attvalue for="1" value="6"/>
+          <attvalue for="2" value="168000.0"/>
+          <attvalue for="3" value="0.0128"/>
+          <attvalue for="4" value="4"/>
+        </attvalues>
+        <viz:size value="15.96"/>
+        <viz:position x="687.60" y="277.12" z="0.0"/>
+        <viz:color r="239" g="68" b="68" a="0.9"/>
+      </node>
+      <node id="fert_sub" label="Fertilizer Subsidy (Urea & NBS)">
+        <attvalues>
+          <attvalue for="0" value="Social Safety Net"/>
+          <attvalue for="1" value="6"/>
+          <attvalue for="2" value="164000.0"/>
+          <attvalue for="3" value="0.0"/>
+          <attvalue for="4" value="4"/>
+        </attvalues>
+        <viz:size value="15.00"/>
+        <viz:position x="633.60" y="274.47" z="0.0"/>
+        <viz:color r="239" g="68" b="68" a="0.9"/>
+      </node>
+      <node id="mohfw_health" label="Ministry of Health & Family Welfare">
+        <attvalues>
+          <attvalue for="0" value="Human Capital"/>
+          <attvalue for="1" value="6"/>
+          <attvalue for="2" value="90659.0"/>
+          <attvalue for="3" value="0.0"/>
+          <attvalue for="4" value="1"/>
+        </attvalues>
+        <viz:size value="15.00"/>
+        <viz:position x="664.80" y="342.82" z="0.0"/>
+        <viz:color r="16" g="185" b="129" a="0.9"/>
+      </node>
+    </nodes>
+    <edges>
+      <edge id="0" source="corp_tax" target="direct_tax" weight="1020000.00">
+        <attvalues>
+          <attvalue for="0" value="AGGREGATES_INTO"/>
+        </attvalues>
+      </edge>
+      <edge id="1" source="income_tax" target="direct_tax" weight="1156000.00">
+        <attvalues>
+          <attvalue for="0" value="AGGREGATES_INTO"/>
+        </attvalues>
+      </edge>
+      <edge id="2" source="gst" target="indirect_tax" weight="1067650.00">
+        <attvalues>
+          <attvalue for="0" value="AGGREGATES_INTO"/>
+        </attvalues>
+      </edge>
+      <edge id="3" source="customs" target="indirect_tax" weight="231700.00">
+        <attvalues>
+          <attvalue for="0" value="AGGREGATES_INTO"/>
+        </attvalues>
+      </edge>
+      <edge id="4" source="excise" target="indirect_tax" weight="318780.00">
+        <attvalues>
+          <attvalue for="0" value="AGGREGATES_INTO"/>
+        </attvalues>
+      </edge>
+      <edge id="5" source="direct_tax" target="gross_tax" weight="2176000.00">
+        <attvalues>
+          <attvalue for="0" value="FORMS_GROSS_REVENUE"/>
+        </attvalues>
+      </edge>
+      <edge id="6" source="indirect_tax" target="gross_tax" weight="1618130.00">
+        <attvalues>
+          <attvalue for="0" value="FORMS_GROSS_REVENUE"/>
+        </attvalues>
+      </edge>
+      <edge id="7" source="gross_tax" target="devolution" weight="1219783.00">
+        <attvalues>
+          <attvalue for="0" value="DEVOLVES_CONSTITUTIONALLY"/>
+        </attvalues>
+      </edge>
+      <edge id="8" source="gross_tax" target="net_tax" weight="2574347.00">
+        <attvalues>
+          <attvalue for="0" value="NET_TRANSFER_TO_CENTRE"/>
+        </attvalues>
+      </edge>
+      <edge id="9" source="net_tax" target="central_pool" weight="2574347.00">
+        <attvalues>
+          <attvalue for="0" value="CONSOLIDATES_INTO_CFI"/>
+        </attvalues>
+      </edge>
+      <edge id="10" source="borrowings" target="central_pool" weight="1613312.00">
+        <attvalues>
+          <attvalue for="0" value="DEFICIT_FINANCES_CFI"/>
+        </attvalues>
+      </edge>
+      <edge id="11" source="non_tax" target="central_pool" weight="562692.00">
+        <attvalues>
+          <attvalue for="0" value="NON_TAX_SURPLUS_INTO_CFI"/>
+        </attvalues>
+      </edge>
+      <edge id="12" source="central_pool" target="interest" weight="1162940.00">
+        <attvalues>
+          <attvalue for="0" value="SERVICES_PUBLIC_DEBT"/>
+        </attvalues>
+      </edge>
+      <edge id="13" source="central_pool" target="defense" weight="454773.00">
+        <attvalues>
+          <attvalue for="0" value="FUNDS_NATIONAL_SECURITY"/>
+        </attvalues>
+      </edge>
+      <edge id="14" source="central_pool" target="infra" weight="544000.00">
+        <attvalues>
+          <attvalue for="0" value="CAPEX_ALLOCATION"/>
+        </attvalues>
+      </edge>
+      <edge id="15" source="central_pool" target="rural_agri" weight="265808.00">
+        <attvalues>
+          <attvalue for="0" value="AGRI_WELFARE_ALLOCATION"/>
+        </attvalues>
+      </edge>
+      <edge id="16" source="central_pool" target="subsidies" weight="381175.00">
+        <attvalues>
+          <attvalue for="0" value="SUBSIDY_SUPPORT"/>
+        </attvalues>
+      </edge>
+      <edge id="17" source="central_pool" target="social" weight="212450.00">
+        <attvalues>
+          <attvalue for="0" value="HUMAN_CAPITAL_ALLOCATION"/>
+        </attvalues>
+      </edge>
+      <edge id="18" source="central_pool" target="transfers_grants" weight="232000.00">
+        <attvalues>
+          <attvalue for="0" value="FC_STATUTORY_GRANTS"/>
+        </attvalues>
+      </edge>
+      <edge id="19" source="central_pool" target="other_exp" weight="1497205.00">
+        <attvalues>
+          <attvalue for="0" value="CIVIL_GOVERNANCE_EXP"/>
+        </attvalues>
+      </edge>
+      <edge id="20" source="defense" target="mod" weight="454773.00">
+        <attvalues>
+          <attvalue for="0" value="MINISTRY_ENVELOPE"/>
+        </attvalues>
+      </edge>
+      <edge id="21" source="mod" target="def_capex" weight="172000.00">
+        <attvalues>
+          <attvalue for="0" value="CAPITAL_MODERNIZATION"/>
+        </attvalues>
+      </edge>
+      <edge id="22" source="mod" target="def_salaries" weight="282773.00">
+        <attvalues>
+          <attvalue for="0" value="REVENUE_SALARIES_PENSIONS"/>
+        </attvalues>
+      </edge>
+      <edge id="23" source="infra" target="morth" weight="278000.00">
+        <attvalues>
+          <attvalue for="0" value="HIGHWAY_PORTFOLIO"/>
+        </attvalues>
+      </edge>
+      <edge id="24" source="infra" target="railways" weight="252200.00">
+        <attvalues>
+          <attvalue for="0" value="RAILWAY_CAPEX_FUND"/>
+        </attvalues>
+      </edge>
+      <edge id="25" source="infra" target="mohua" weight="82577.00">
+        <attvalues>
+          <attvalue for="0" value="URBAN_INFRA_FUND"/>
+        </attvalues>
+      </edge>
+      <edge id="26" source="morth" target="nhai" weight="168464.00">
+        <attvalues>
+          <attvalue for="0" value="FLAGSHIP_EXPRESSWAYS"/>
+        </attvalues>
+      </edge>
+      <edge id="27" source="mohua" target="pmay" weight="30171.00">
+        <attvalues>
+          <attvalue for="0" value="URBAN_HOUSING_PROGRAM"/>
+        </attvalues>
+      </edge>
+      <edge id="28" source="rural_agri" target="mord" weight="177566.00">
+        <attvalues>
+          <attvalue for="0" value="RURAL_DEVELOPMENT_ENVELOPE"/>
+        </attvalues>
+      </edge>
+      <edge id="29" source="rural_agri" target="moa" weight="132000.00">
+        <attvalues>
+          <attvalue for="0" value="AGRICULTURE_ENVELOPE"/>
+        </attvalues>
+      </edge>
+      <edge id="30" source="mord" target="mgnrega" weight="86000.00">
+        <attvalues>
+          <attvalue for="0" value="GUARANTEED_WAGE_SAFETY"/>
+        </attvalues>
+      </edge>
+      <edge id="31" source="moa" target="pm_kisan" weight="60000.00">
+        <attvalues>
+          <attvalue for="0" value="DIRECT_INCOME_TRANSFER"/>
+        </attvalues>
+      </edge>
+      <edge id="32" source="subsidies" target="food_pds" weight="213000.00">
+        <attvalues>
+          <attvalue for="0" value="FOOD_SUBSIDY_ENVELOPE"/>
+        </attvalues>
+      </edge>
+      <edge id="33" source="subsidies" target="fert_dept" weight="168000.00">
+        <attvalues>
+          <attvalue for="0" value="FERTILIZER_SUBSIDY_ENVELOPE"/>
+        </attvalues>
+      </edge>
+      <edge id="34" source="food_pds" target="nfsa_food" weight="205250.00">
+        <attvalues>
+          <attvalue for="0" value="FOOD_SECURITY_PDS"/>
+        </attvalues>
+      </edge>
+      <edge id="35" source="fert_dept" target="fert_sub" weight="164000.00">
+        <attvalues>
+          <attvalue for="0" value="AGRI_INPUT_SUBSIDY"/>
+        </attvalues>
+      </edge>
+      <edge id="36" source="social" target="mohfw_health" weight="90659.00">
+        <attvalues>
+          <attvalue for="0" value="HEALTHCARE_ENVELOPE"/>
+        </attvalues>
+      </edge>
+      <edge id="37" source="mord" target="pmay" weight="24329.00">
+        <attvalues>
+          <attvalue for="0" value="RURAL_HOUSING_PMAY_G"/>
+        </attvalues>
+      </edge>
+      <edge id="38" source="borrowings" target="infra" weight="544000.00">
+        <attvalues>
+          <attvalue for="0" value="DIRECT_DEBT_TO_CAPEX"/>
+        </attvalues>
+      </edge>
+      <edge id="39" source="borrowings" target="interest" weight="618940.00">
+        <attvalues>
+          <attvalue for="0" value="DEBT_ROLLOVER_FINANCING"/>
+        </attvalues>
+      </edge>
+      <edge id="40" source="borrowings" target="defense" weight="172000.00">
+        <attvalues>
+          <attvalue for="0" value="SECURITY_CAPITAL_BORROWING"/>
+        </attvalues>
+      </edge>
+      <edge id="41" source="devolution" target="rural_agri" weight="350000.00">
+        <attvalues>
+          <attvalue for="0" value="STATE_DEVOLUTION_RURAL_SPEND"/>
+        </attvalues>
+      </edge>
+      <edge id="42" source="devolution" target="social" weight="380000.00">
+        <attvalues>
+          <attvalue for="0" value="STATE_DEVOLUTION_HEALTH_EDU"/>
+        </attvalues>
+      </edge>
+      <edge id="43" source="transfers_grants" target="mord" weight="120000.00">
+        <attvalues>
+          <attvalue for="0" value="PANCHAYAT_TIER_GRANTS"/>
+        </attvalues>
+      </edge>
+      <edge id="44" source="non_tax" target="social" weight="150000.00">
+        <attvalues>
+          <attvalue for="0" value="DIVIDEND_TO_HUMAN_CAPITAL"/>
+        </attvalues>
+      </edge>
+      <edge id="45" source="non_tax" target="infra" weight="200000.00">
+        <attvalues>
+          <attvalue for="0" value="SPECTRUM_AUCTION_TO_INFRA"/>
+        </attvalues>
+      </edge>
+      <edge id="46" source="non_tax" target="other_exp" weight="212692.00">
+        <attvalues>
+          <attvalue for="0" value="ADMIN_COST_ABSORPTION"/>
+        </attvalues>
+      </edge>
+      <edge id="47" source="morth" target="railways" weight="45000.00">
+        <attvalues>
+          <attvalue for="0" value="PM_GATI_SHAKTI_MULTIMODAL"/>
+        </attvalues>
+      </edge>
+      <edge id="48" source="food_pds" target="rural_agri" weight="180000.00">
+        <attvalues>
+          <attvalue for="0" value="MSP_GRAIN_PROCUREMENT"/>
+        </attvalues>
+      </edge>
+      <edge id="49" source="moa" target="fert_dept" weight="120000.00">
+        <attvalues>
+          <attvalue for="0" value="AGRI_FERT_INPUT_SUBSIDY"/>
+        </attvalues>
+      </edge>
+      <edge id="50" source="defense" target="infra" weight="25000.00">
+        <attvalues>
+          <attvalue for="0" value="STRATEGIC_BORDER_ROADS"/>
+        </attvalues>
+      </edge>
+      <edge id="51" source="net_tax" target="transfers_grants" weight="232000.00">
+        <attvalues>
+          <attvalue for="0" value="POST_DEVOLUTION_DEFICIT_GRANTS"/>
+        </attvalues>
+      </edge>
+    </edges>
+  </graph>
+</gexf>

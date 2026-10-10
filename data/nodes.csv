@@ -1,0 +1,39 @@
+Id,Label,Category,Tier,Budget_Crore
+"corp_tax","Corporation Tax","Direct Tax",1,1020000.00
+"income_tax","Personal Income Tax","Direct Tax",1,1156000.00
+"gst","Goods & Services Tax (GST)","Indirect Tax",1,1067650.00
+"customs","Customs Duty","Indirect Tax",1,231700.00
+"excise","Union Excise Duties","Indirect Tax",1,318780.00
+"borrowings","Fiscal Deficit Borrowings","Capital Inflow",1,1613312.00
+"non_tax","Non-Tax Receipts (RBI/Dividends)","Non-Tax Revenue",1,562692.00
+"direct_tax","Direct Taxes Pool","Tax Pool",2,2176000.00
+"indirect_tax","Indirect Taxes Pool","Tax Pool",2,1618130.00
+"gross_tax","Gross Tax Revenue","Macro Hub",2,3794130.00
+"devolution","States Devolution (41% FC Pool)","Constitutional Devolution",3,1219783.00
+"net_tax","Net Tax to Centre","Central Revenue",3,2574347.00
+"central_pool","Consolidated Fund of India (CFI)","Sovereign Treasury",4,4750351.00
+"interest","Debt Servicing (Interest Payments)","Sovereign Obligation",5,1162940.00
+"defense","Defense & National Security","Strategic Defense",5,454773.00
+"infra","Transport & Infrastructure","Capital Infrastructure",5,544000.00
+"rural_agri","Agri & Rural Development","Rural & Agrarian",5,265808.00
+"subsidies","Major Subsidies (Food & Fert)","Social Safety Net",5,381175.00
+"social","Education & Health Human Capital","Human Capital",5,212450.00
+"transfers_grants","Finance Commission Grants","Intergovernmental",5,232000.00
+"other_exp","General Admin & Organs of State","Public Administration",5,1497205.00
+"mod","Ministry of Defence","Strategic Defense",6,454773.00
+"def_capex","Defense Modernization Capex","Strategic Defense",6,172000.00
+"def_salaries","Defense Revenue & Pensions","Strategic Defense",6,282773.00
+"morth","Ministry of Road Transport & Highways","Capital Infrastructure",6,278000.00
+"nhai","NHAI Expressways & Highways","Capital Infrastructure",6,168464.00
+"railways","Indian Railways Capital Outlay","Capital Infrastructure",6,252200.00
+"mohua","Ministry of Housing & Urban Affairs","Capital Infrastructure",6,82577.00
+"pmay","Pradhan Mantri Awas Yojana (PMAY)","Social Safety Net",6,54500.00
+"mord","Ministry of Rural Development","Rural & Agrarian",6,177566.00
+"mgnrega","MGNREGA Rural Employment Guarantee","Rural & Agrarian",6,86000.00
+"moa","Ministry of Agriculture & Farmers Welfare","Rural & Agrarian",6,132000.00
+"pm_kisan","PM-KISAN Direct Income Support","Rural & Agrarian",6,60000.00
+"food_pds","Dept of Food & Public Distribution","Social Safety Net",6,213000.00
+"nfsa_food","NFSA Food Subsidy (PDS)","Social Safety Net",6,205250.00
+"fert_dept","Department of Fertilizers","Social Safety Net",6,168000.00
+"fert_sub","Fertilizer Subsidy (Urea & NBS)","Social Safety Net",6,164000.00
+"mohfw_health","Ministry of Health & Family Welfare","Human Capital",6,90659.00

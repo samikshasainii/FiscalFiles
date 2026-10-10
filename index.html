@@ -3,115 +3,1118 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FISCALFILES - India's Tax Collection vs. Sectoral Expenditure</title>
+  <title>FISCALFILES | Sovereign Fiscal Network Architecture (Graph Workbench)</title>
   
-  <!-- Modern Clean Typography -->
+  <!-- Modern Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Core Dashboard CSS (Samiksha) -->
-  <link rel="stylesheet" href="./css/styles.css">
+  <style>
+    :root {
+      --bg-dark: #0B0F19;
+      --card-bg: rgba(17, 24, 39, 0.75);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-border-hover: rgba(99, 102, 241, 0.4);
+      --accent: #6366F1;
+      --accent-glow: rgba(99, 102, 241, 0.25);
+      --text-main: #F8FAFC;
+      --text-muted: #94A3B8;
+      --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
 
-  <!-- Apache ECharts Library -->
-  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+      /* Louvain Cluster Colors */
+      --c0: #EA580C; /* Amber/Orange: Macro Revenue & Devolution Hub */
+      --c1: #10B981; /* Emerald: Direct Taxes & Sovereign Debt Servicing */
+      --c2: #3B82F6; /* Sapphire Blue: Capital Infrastructure & Transport */
+      --c3: #A855F7; /* Amethyst Purple: Social Human Capital & Rural Welfare */
+      --c4: #EF4444; /* Crimson: Strategic Defense & Security */
+    }
 
-  <!-- Pre-bundled Zero-CORS Data (Shreyashi) -->
-  <script src="./data/data_bundle.js"></script>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  <!-- Core Graph Visualization Engines (Aadrika) -->
-  <script src="./js/sankeyChart.js"></script>
-  <script src="./js/treemapChart.js"></script>
-  <script src="./js/trendsChart.js"></script>
-  <script src="./js/varianceChart.js"></script>
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      overflow: hidden;
+      height: 100vh;
+      width: 100vw;
+      user-select: none;
+    }
+
+    /* Fullscreen Graph Canvas */
+    #graph-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Top Floating Header Deck */
+    .top-nav {
+      position: absolute;
+      top: 20px;
+      left: 24px;
+      right: 24px;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      pointer-events: none;
+    }
+
+    .brand-card {
+      pointer-events: auto;
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 14px 22px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .brand-logo {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, #6366F1, #EC4899);
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 18px;
+      color: white;
+      box-shadow: 0 0 15px var(--accent-glow);
+    }
+
+    .brand-text h1 {
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .brand-text p {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      margin-top: 2px;
+      font-weight: 500;
+    }
+
+    .badge-pill {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 99px;
+      background: rgba(99, 102, 241, 0.15);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      color: #A5B4FC;
+    }
+
+    .nav-actions {
+      pointer-events: auto;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn {
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--card-border);
+      color: var(--text-main);
+      padding: 9px 15px;
+      border-radius: 10px;
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      border-color: var(--card-border-hover);
+      background: rgba(30, 41, 59, 0.9);
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #4F46E5, #6366F1);
+      border: none;
+      box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #4338CA, #4F46E5);
+      box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+    }
+
+    /* Left Control Deck (Floating Sidebar) */
+    .control-deck {
+      position: absolute;
+      top: 100px;
+      left: 24px;
+      bottom: 24px;
+      width: 320px;
+      z-index: 10;
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      overflow-y: auto;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .control-deck::-webkit-scrollbar {
+      width: 4px;
+    }
+    .control-deck::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 4px;
+    }
+
+    .section-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .stat-pills-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .mini-stat {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      padding: 9px 12px;
+    }
+
+    .mini-stat .val {
+      font-size: 15px;
+      font-weight: 800;
+      font-family: var(--font-mono);
+      color: #F8FAFC;
+    }
+
+    .mini-stat .lbl {
+      font-size: 10px;
+      color: var(--text-muted);
+      margin-top: 2px;
+      font-weight: 500;
+    }
+
+    /* Select and Toggles */
+    .control-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    label {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: #CBD5E1;
+    }
+
+    select, input[type="text"] {
+      width: 100%;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 8px 12px;
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      font-size: 12px;
+      outline: none;
+      transition: border 0.2s;
+    }
+
+    select:focus, input[type="text"]:focus {
+      border-color: var(--accent);
+    }
+
+    /* Filter Cluster Pills */
+    .cluster-filter-list {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .cluster-pill {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      padding: 6px 10px;
+      font-size: 11px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .cluster-pill:hover, .cluster-pill.active {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* Sliders */
+    .slider-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    input[type="range"] {
+      width: 100%;
+      accent-color: var(--accent);
+      cursor: pointer;
+    }
+
+    /* Right Inspection HUD */
+    .inspect-hud {
+      position: absolute;
+      top: 100px;
+      right: 24px;
+      width: 340px;
+      z-index: 10;
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .inspect-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+
+    .inspect-title {
+      font-size: 16px;
+      font-weight: 800;
+      line-height: 1.25;
+      color: white;
+    }
+
+    .tier-badge {
+      font-size: 10px;
+      font-family: var(--font-mono);
+      padding: 2px 7px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #E2E8F0;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 14px 0;
+    }
+
+    .metric-item {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      padding: 10px;
+    }
+
+    .metric-item .val {
+      font-size: 16px;
+      font-weight: 700;
+      font-family: var(--font-mono);
+      color: #38BDF8;
+    }
+
+    .metric-item .lbl {
+      font-size: 10.5px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .flow-list {
+      max-height: 180px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .flow-item {
+      font-size: 11px;
+      background: rgba(255, 255, 255, 0.02);
+      border-left: 2px solid var(--accent);
+      padding: 6px 10px;
+      border-radius: 0 6px 6px 0;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .flow-item .amt {
+      font-family: var(--font-mono);
+      font-weight: 600;
+      color: #A5B4FC;
+    }
+
+    /* Bottom Interactive Helper Bar */
+    .bottom-bar {
+      position: absolute;
+      bottom: 20px;
+      left: 368px;
+      right: 388px;
+      z-index: 10;
+      background: var(--card-bg);
+      backdrop-filter: blur(14px);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 8px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11.5px;
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    .shortcut-keys {
+      display: flex;
+      gap: 14px;
+      font-family: var(--font-mono);
+    }
+
+    .key {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: #E2E8F0;
+      font-size: 10px;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Top Header Navigation & Filter Bar -->
-  <header class="header">
-    <div class="header-title">
-      <h1>
-        FISCALFILES 
-        <span class="badge">Live Dashboard</span>
-      </h1>
-      <p>India's Union Budget: Tax Collection Architecture vs. Sectoral Expenditure</p>
+  <!-- Fullscreen Interactive Canvas -->
+  <div id="graph-container">
+    <canvas id="graphCanvas"></canvas>
+  </div>
+
+  <!-- Top Navigation & Direct Deliverables Access -->
+  <header class="top-nav">
+    <div class="brand-card">
+      <div class="brand-logo">₹</div>
+      <div class="brand-text">
+        <h1>FISCALFILES <span class="badge-pill">Graph Workbench</span></h1>
+        <p>India Sovereign Fiscal Network Architecture • Union Budget 2024-25</p>
+      </div>
     </div>
 
-    <!-- Interactive Filters (Samiksha) -->
-    <div class="controls-bar">
-      <select id="filter-year" class="select-control">
-        <option value="2024-25" selected>FY 2024-25 (Latest BE)</option>
-        <option value="2023-24">FY 2023-24 (RE / Actuals)</option>
-      </select>
-
-      <select id="filter-stage" class="select-control">
-        <option value="BE" selected>Budget Estimates (BE)</option>
-        <option value="RE">Revised Estimates (RE)</option>
-      </select>
-
-      <div class="team-badge">
-        Engines: <strong>Aadrika (Viz Lead)</strong> | Pipeline: <strong>Shreyashi</strong> | UI: <strong>Samiksha</strong>
-      </div>
+    <div class="nav-actions">
+      <a href="exports/fiscal_graph_gephi_export.pdf" target="_blank" class="btn" title="Download Gephi Vector PDF">
+        📄 Gephi PDF
+      </a>
+      <a href="exports/fiscal_network.gephi" download class="btn" title="Download Native Gephi Workspace (.gephi)">
+        📦 .gephi Project
+      </a>
+      <a href="exports/neo4j_fiscal_graph_dump.cypher" download class="btn" title="Download Neo4j Cypher Script">
+        ⚡ Neo4j Cypher
+      </a>
+      <a href="REPORT.md" target="_blank" class="btn" title="Read Academic Evaluation Report">
+        📑 Report (4 Criteria)
+      </a>
+      <a href="preview.html" class="btn btn-primary" title="Switch to Exploratory Macro Dashboard">
+        📊 Macro Charts ↗
+      </a>
     </div>
   </header>
 
-  <!-- KPI Summary Ribbon -->
-  <div class="kpi-grid">
-    <div class="kpi-card green">
-      <div class="kpi-label">Gross Tax Revenue</div>
-      <div class="kpi-value" id="kpi-gross-tax">₹37.94 Lakh Cr</div>
-      <div class="kpi-sub">Direct Taxes (57.4%) + Indirect Taxes (42.6%)</div>
-    </div>
-    <div class="kpi-card amber">
-      <div class="kpi-label">States' Devolution Share</div>
-      <div class="kpi-value" id="kpi-devolution">₹12.20 Lakh Cr</div>
-      <div class="kpi-sub">15th Finance Commission (~41% Divisible Pool)</div>
-    </div>
-    <div class="kpi-card blue">
-      <div class="kpi-label">Consolidated Fund Outlay</div>
-      <div class="kpi-value" id="kpi-total-pool">₹47.50 Lakh Cr</div>
-      <div class="kpi-sub">Zero Leakage: Total Inflow = Total Outflow</div>
-    </div>
-    <div class="kpi-card purple">
-      <div class="kpi-label">10-Year Capex Surge</div>
-      <div class="kpi-value">19.46% CAGR</div>
-      <div class="kpi-sub">Fiscal deficit consolidates to 5.1% of GDP</div>
-    </div>
-  </div>
-
-  <!-- Main Visualization Canvas Grid -->
-  <main class="dashboard-grid">
-
-    <!-- 1. Macro Fiscal Sankey Flow -->
-    <section class="chart-card">
-      <div id="sankey-chart" class="chart-container tall"></div>
-    </section>
-
-    <!-- 2. Two-Column Row: Treemap Drilldown & 10-Year Trends -->
-    <div class="two-col-grid">
-      <!-- Sectoral & Scheme Treemap -->
-      <section class="chart-card">
-        <div id="treemap-chart" class="chart-container medium"></div>
-      </section>
-
-      <!-- Decadal Longitudinal Trends -->
-      <section class="chart-card">
-        <div id="trends-chart" class="chart-container medium"></div>
-      </section>
+  <!-- Left Control Deck -->
+  <aside class="control-deck">
+    <div>
+      <div class="section-title">Network Topology Stats</div>
+      <div class="stat-pills-row">
+        <div class="mini-stat">
+          <div class="val">38</div>
+          <div class="lbl">Sovereign Nodes</div>
+        </div>
+        <div class="mini-stat">
+          <div class="val">52</div>
+          <div class="lbl">Directed Flows</div>
+        </div>
+        <div class="mini-stat">
+          <div class="val">₹48.21L Cr</div>
+          <div class="lbl">Total Flow Volume</div>
+        </div>
+        <div class="mini-stat">
+          <div class="val">Q = 0.433</div>
+          <div class="lbl">Louvain Modularity</div>
+        </div>
+      </div>
     </div>
 
-    <!-- 3. Fiscal Variance & Discipline (BE vs RE vs Actuals) -->
-    <section class="chart-card">
-      <div id="variance-chart" class="chart-container medium"></div>
-    </section>
+    <!-- Node Sizing & Encoding Controls -->
+    <div class="control-group">
+      <div class="section-title">Visual Encodings</div>
+      <label for="sizeEncoding">Node Size Mapping:</label>
+      <select id="sizeEncoding">
+        <option value="betweenness" selected>Betweenness Centrality (Cb) [Gatekeepers]</option>
+        <option value="degree">Total Degree Centrality [Connectivity]</option>
+        <option value="budget">Fiscal Outlay (₹ Crore) [Volume]</option>
+      </select>
+    </div>
 
-  </main>
+    <!-- Community Filter -->
+    <div>
+      <div class="section-title">Louvain Modularity Communities</div>
+      <div class="cluster-filter-list" id="clusterFilters">
+        <div class="cluster-pill active" data-cluster="all">
+          <span class="dot" style="background: #94A3B8;"></span>
+          <span>Show All Communities (38)</span>
+        </div>
+        <div class="cluster-pill" data-cluster="0">
+          <span class="dot" style="background: var(--c0);"></span>
+          <span>Macro Revenue & Devolution Hub (10)</span>
+        </div>
+        <div class="cluster-pill" data-cluster="1">
+          <span class="dot" style="background: var(--c1);"></span>
+          <span>Direct Taxes & Debt Servicing (4)</span>
+        </div>
+        <div class="cluster-pill" data-cluster="2">
+          <span class="dot" style="background: var(--c2);"></span>
+          <span>Capital Infrastructure & Transport (7)</span>
+        </div>
+        <div class="cluster-pill" data-cluster="3">
+          <span class="dot" style="background: var(--c3);"></span>
+          <span>Social Human Capital & Rural (13)</span>
+        </div>
+        <div class="cluster-pill" data-cluster="4">
+          <span class="dot" style="background: var(--c4);"></span>
+          <span>Strategic Defense & Security (4)</span>
+        </div>
+      </div>
+    </div>
 
-  <footer>
-    <p>FISCALFILES | B.Tech Graph Visualization Project | Built with Apache ECharts &amp; Official Union Budget Data (<a href="https://www.indiabudget.gov.in" target="_blank" rel="noopener" style="color: #38bdf8; text-decoration: underline;">indiabudget.gov.in</a> &amp; <a href="https://cga.nic.in" target="_blank" rel="noopener" style="color: #38bdf8; text-decoration: underline;">cga.nic.in</a>)</p>
+    <!-- Search / Zoom to Node -->
+    <div class="control-group">
+      <div class="section-title">Focus & Pin Node</div>
+      <select id="nodeSearch">
+        <option value="">-- Jump to Sovereign Entity --</option>
+      </select>
+    </div>
+
+    <!-- Physics Tuning (ForceAtlas2 Continuous Simulation) -->
+    <div class="control-group">
+      <div class="section-title">ForceAtlas2 Physics Engine</div>
+      <div class="slider-row">
+        <span>Node Repulsion</span>
+        <span id="repulsionVal">250</span>
+      </div>
+      <input type="range" id="repulsionSlider" min="50" max="600" value="250">
+
+      <div class="slider-row" style="margin-top: 8px;">
+        <span>Link Elastic Distance</span>
+        <span id="distanceVal">120</span>
+      </div>
+      <input type="range" id="distanceSlider" min="40" max="300" value="120">
+    </div>
+
+    <button id="resetLayoutBtn" class="btn" style="justify-content: center;">
+      ↺ Reset ForceAtlas2 Layout
+    </button>
+  </aside>
+
+  <!-- Right Inspection HUD -->
+  <aside class="inspect-hud" id="inspectHud">
+    <div class="inspect-header">
+      <div>
+        <div class="tier-badge" id="hudTier">TIER 4 • SOVEREIGN TREASURY</div>
+        <h2 class="inspect-title" id="hudTitle">Consolidated Fund of India (CFI)</h2>
+      </div>
+    </div>
+
+    <p style="font-size: 11px; color: var(--text-muted);" id="hudCategory">Category: Sovereign Treasury Gatekeeper</p>
+
+    <div class="metric-grid">
+      <div class="metric-item">
+        <div class="val" id="hudBudget">₹47,50,351 Cr</div>
+        <div class="lbl">Fiscal Bandwidth</div>
+      </div>
+      <div class="metric-item">
+        <div class="val" id="hudBetweenness">0.582</div>
+        <div class="lbl">Betweenness Centrality (Cb)</div>
+      </div>
+      <div class="metric-item">
+        <div class="val" id="hudInDeg">3 Inflows</div>
+        <div class="lbl">In-Degree Centrality</div>
+      </div>
+      <div class="metric-item">
+        <div class="val" id="hudOutDeg">8 Outflows</div>
+        <div class="lbl">Out-Degree Centrality</div>
+      </div>
+    </div>
+
+    <div class="section-title" style="margin-top: 10px;">Immediate Fiscal Ties</div>
+    <div class="flow-list" id="hudFlows">
+      <!-- Injected dynamically -->
+    </div>
+  </aside>
+
+  <!-- Bottom Helper Bar -->
+  <footer class="bottom-bar">
+    <div><strong>ForceAtlas2 Live Spatialization:</strong> Nodes repel via Barnes-Hut physics while links attract linearly.</div>
+    <div class="shortcut-keys">
+      <span><span class="key">Drag</span> Move Node</span>
+      <span><span class="key">Scroll</span> Zoom</span>
+      <span><span class="key">Click</span> Inspect</span>
+    </div>
   </footer>
 
-  <!-- Application Controller Script (Samiksha) -->
-  <script src="./js/app.js"></script>
+  <!-- Complete Inlined Fiscal Graph Topology Data & Simulation Engine (Zero CORS Issues) -->
+  <script>
+    const GRAPH_DATA = {
+      nodes: [
+        {"id": "corp_tax", "label": "Corporation Tax", "category": "Direct Tax", "tier": 1, "budget": 1020000.0, "cb": 0.000, "deg": 1, "comm": 1},
+        {"id": "income_tax", "label": "Personal Income Tax", "category": "Direct Tax", "tier": 1, "budget": 1156000.0, "cb": 0.000, "deg": 1, "comm": 1},
+        {"id": "gst", "label": "Goods & Services Tax (GST)", "category": "Indirect Tax", "tier": 1, "budget": 1067650.0, "cb": 0.000, "deg": 1, "comm": 0},
+        {"id": "customs", "label": "Customs Duty", "category": "Indirect Tax", "tier": 1, "budget": 231700.0, "cb": 0.000, "deg": 1, "comm": 0},
+        {"id": "excise", "label": "Union Excise Duties", "category": "Indirect Tax", "tier": 1, "budget": 318780.0, "cb": 0.000, "deg": 1, "comm": 0},
+        {"id": "borrowings", "label": "Fiscal Deficit Borrowings", "category": "Capital Inflow", "tier": 1, "budget": 1613312.0, "cb": 0.168, "deg": 4, "comm": 2},
+        {"id": "non_tax", "label": "Non-Tax Receipts (RBI/Dividends)", "category": "Non-Tax Revenue", "tier": 1, "budget": 562692.0, "cb": 0.082, "deg": 4, "comm": 3},
+
+        {"id": "direct_tax", "label": "Direct Taxes Pool", "category": "Tax Pool", "tier": 2, "budget": 2176000.0, "cb": 0.098, "deg": 3, "comm": 1},
+        {"id": "indirect_tax", "label": "Indirect Taxes Pool", "category": "Tax Pool", "tier": 2, "budget": 1618130.0, "cb": 0.112, "deg": 4, "comm": 0},
+        {"id": "gross_tax", "label": "Gross Tax Revenue", "category": "Macro Hub", "tier": 2, "budget": 3794130.0, "cb": 0.187, "deg": 4, "comm": 0},
+
+        {"id": "devolution", "label": "States Devolution (41% FC Pool)", "category": "Constitutional Devolution", "tier": 3, "budget": 1219783.0, "cb": 0.142, "deg": 3, "comm": 0},
+        {"id": "net_tax", "label": "Net Tax to Centre", "category": "Central Revenue", "tier": 3, "budget": 2574347.0, "cb": 0.214, "deg": 3, "comm": 0},
+
+        {"id": "central_pool", "label": "Consolidated Fund of India (CFI)", "category": "Sovereign Treasury", "tier": 4, "budget": 4750351.0, "cb": 0.582, "deg": 11, "comm": 0},
+
+        {"id": "interest", "label": "Debt Servicing (Interest Payments)", "category": "Sovereign Obligation", "tier": 5, "budget": 1162940.0, "cb": 0.045, "deg": 2, "comm": 1},
+        {"id": "defense", "label": "Defense & National Security", "category": "Strategic Defense", "tier": 5, "budget": 454773.0, "cb": 0.092, "deg": 5, "comm": 4},
+        {"id": "infra", "label": "Transport & Infrastructure", "category": "Capital Infrastructure", "tier": 5, "budget": 544000.0, "cb": 0.224, "deg": 7, "comm": 2},
+        {"id": "rural_agri", "label": "Agri & Rural Development", "category": "Rural & Agrarian", "tier": 5, "budget": 265808.0, "cb": 0.118, "deg": 5, "comm": 3},
+        {"id": "subsidies", "label": "Major Subsidies (Food & Fert)", "category": "Social Safety Net", "tier": 5, "budget": 381175.0, "cb": 0.088, "deg": 3, "comm": 3},
+        {"id": "social", "label": "Education & Health Human Capital", "category": "Human Capital", "tier": 5, "budget": 212450.0, "cb": 0.076, "deg": 4, "comm": 3},
+        {"id": "transfers_grants", "label": "Finance Commission Grants", "category": "Intergovernmental", "tier": 5, "budget": 232000.0, "cb": 0.064, "deg": 3, "comm": 0},
+        {"id": "other_exp", "label": "General Admin & Organs of State", "category": "Public Administration", "tier": 5, "budget": 1497205.0, "cb": 0.012, "deg": 2, "comm": 0},
+
+        {"id": "mod", "label": "Ministry of Defence", "category": "Strategic Defense", "tier": 6, "budget": 454773.0, "cb": 0.054, "deg": 3, "comm": 4},
+        {"id": "def_capex", "label": "Defense Modernization Capex", "category": "Strategic Defense", "tier": 6, "budget": 172000.0, "cb": 0.000, "deg": 1, "comm": 4},
+        {"id": "def_salaries", "label": "Defense Revenue & Pensions", "category": "Strategic Defense", "tier": 6, "budget": 282773.0, "cb": 0.000, "deg": 1, "comm": 4},
+
+        {"id": "morth", "label": "Ministry of Road Transport & Highways", "category": "Capital Infrastructure", "tier": 6, "budget": 278000.0, "cb": 0.062, "deg": 3, "comm": 2},
+        {"id": "nhai", "label": "NHAI Expressways & Highways", "category": "Capital Infrastructure", "tier": 6, "budget": 168464.0, "cb": 0.000, "deg": 1, "comm": 2},
+        {"id": "railways", "label": "Indian Railways Capital Outlay", "category": "Capital Infrastructure", "tier": 6, "budget": 252200.0, "cb": 0.015, "deg": 2, "comm": 2},
+        {"id": "mohua", "label": "Ministry of Housing & Urban Affairs", "category": "Capital Infrastructure", "tier": 6, "budget": 82577.0, "cb": 0.021, "deg": 2, "comm": 2},
+        {"id": "pmay", "label": "Pradhan Mantri Awas Yojana (PMAY)", "category": "Social Safety Net", "tier": 6, "budget": 54500.0, "cb": 0.000, "deg": 2, "comm": 3},
+
+        {"id": "mord", "label": "Ministry of Rural Development", "category": "Rural & Agrarian", "tier": 6, "budget": 177566.0, "cb": 0.074, "deg": 4, "comm": 3},
+        {"id": "mgnrega", "label": "MGNREGA Rural Employment Guarantee", "category": "Rural & Agrarian", "tier": 6, "budget": 86000.0, "cb": 0.000, "deg": 1, "comm": 3},
+        {"id": "moa", "label": "Ministry of Agriculture & Farmers Welfare", "category": "Rural & Agrarian", "tier": 6, "budget": 132000.0, "cb": 0.048, "deg": 3, "comm": 3},
+        {"id": "pm_kisan", "label": "PM-KISAN Direct Income Support", "category": "Rural & Agrarian", "tier": 6, "budget": 60000.0, "cb": 0.000, "deg": 1, "comm": 3},
+
+        {"id": "food_pds", "label": "Dept of Food & Public Distribution", "category": "Social Safety Net", "tier": 6, "budget": 213000.0, "cb": 0.052, "deg": 3, "comm": 3},
+        {"id": "nfsa_food", "label": "NFSA Food Subsidy (PDS)", "category": "Social Safety Net", "tier": 6, "budget": 205250.0, "cb": 0.000, "deg": 1, "comm": 3},
+        {"id": "fert_dept", "label": "Department of Fertilizers", "category": "Social Safety Net", "tier": 6, "budget": 168000.0, "cb": 0.046, "deg": 3, "comm": 3},
+        {"id": "fert_sub", "label": "Fertilizer Subsidy (Urea & NBS)", "category": "Social Safety Net", "tier": 6, "budget": 164000.0, "cb": 0.000, "deg": 1, "comm": 3},
+
+        {"id": "mohfw_health", "label": "Ministry of Health & Family Welfare", "category": "Human Capital", "tier": 6, "budget": 90659.0, "cb": 0.000, "deg": 1, "comm": 3}
+      ],
+      edges: [
+        {"source": "corp_tax", "target": "direct_tax", "weight": 1020000.0, "rel": "AGGREGATES_INTO"},
+        {"source": "income_tax", "target": "direct_tax", "weight": 1156000.0, "rel": "AGGREGATES_INTO"},
+        {"source": "gst", "target": "indirect_tax", "weight": 1067650.0, "rel": "AGGREGATES_INTO"},
+        {"source": "customs", "target": "indirect_tax", "weight": 231700.0, "rel": "AGGREGATES_INTO"},
+        {"source": "excise", "target": "indirect_tax", "weight": 318780.0, "rel": "AGGREGATES_INTO"},
+        {"source": "direct_tax", "target": "gross_tax", "weight": 2176000.0, "rel": "FORMS_GROSS_REVENUE"},
+        {"source": "indirect_tax", "target": "gross_tax", "weight": 1618130.0, "rel": "FORMS_GROSS_REVENUE"},
+        {"source": "gross_tax", "target": "devolution", "weight": 1219783.0, "rel": "DEVOLVES_CONSTITUTIONALLY"},
+        {"source": "gross_tax", "target": "net_tax", "weight": 2574347.0, "rel": "NET_TRANSFER_TO_CENTRE"},
+        {"source": "net_tax", "target": "central_pool", "weight": 2574347.0, "rel": "CONSOLIDATES_INTO_CFI"},
+        {"source": "borrowings", "target": "central_pool", "weight": 1613312.0, "rel": "DEFICIT_FINANCES_CFI"},
+        {"source": "non_tax", "target": "central_pool", "weight": 562692.0, "rel": "NON_TAX_SURPLUS_INTO_CFI"},
+        {"source": "central_pool", "target": "interest", "weight": 1162940.0, "rel": "SERVICES_PUBLIC_DEBT"},
+        {"source": "central_pool", "target": "defense", "weight": 454773.0, "rel": "FUNDS_NATIONAL_SECURITY"},
+        {"source": "central_pool", "target": "infra", "weight": 544000.0, "rel": "CAPEX_ALLOCATION"},
+        {"source": "central_pool", "target": "rural_agri", "weight": 265808.0, "rel": "AGRI_WELFARE_ALLOCATION"},
+        {"source": "central_pool", "target": "subsidies", "weight": 381175.0, "rel": "SUBSIDY_SUPPORT"},
+        {"source": "central_pool", "target": "social", "weight": 212450.0, "rel": "HUMAN_CAPITAL_ALLOCATION"},
+        {"source": "central_pool", "target": "transfers_grants", "weight": 232000.0, "rel": "FC_STATUTORY_GRANTS"},
+        {"source": "central_pool", "target": "other_exp", "weight": 1497205.0, "rel": "CIVIL_GOVERNANCE_EXP"},
+        {"source": "defense", "target": "mod", "weight": 454773.0, "rel": "MINISTRY_ENVELOPE"},
+        {"source": "mod", "target": "def_capex", "weight": 172000.0, "rel": "CAPITAL_MODERNIZATION"},
+        {"source": "mod", "target": "def_salaries", "weight": 282773.0, "rel": "REVENUE_SALARIES_PENSIONS"},
+        {"source": "infra", "target": "morth", "weight": 278000.0, "rel": "HIGHWAY_PORTFOLIO"},
+        {"source": "infra", "target": "railways", "weight": 252200.0, "rel": "RAILWAY_CAPEX_FUND"},
+        {"source": "infra", "target": "mohua", "weight": 82577.0, "rel": "URBAN_INFRA_FUND"},
+        {"source": "morth", "target": "nhai", "weight": 168464.0, "rel": "FLAGSHIP_EXPRESSWAYS"},
+        {"source": "mohua", "target": "pmay", "weight": 30171.0, "rel": "URBAN_HOUSING_PROGRAM"},
+        {"source": "rural_agri", "target": "mord", "weight": 177566.0, "rel": "RURAL_DEVELOPMENT_ENVELOPE"},
+        {"source": "rural_agri", "target": "moa", "weight": 132000.0, "rel": "AGRICULTURE_ENVELOPE"},
+        {"source": "mord", "target": "mgnrega", "weight": 86000.0, "rel": "GUARANTEED_WAGE_SAFETY"},
+        {"source": "moa", "target": "pm_kisan", "weight": 60000.0, "rel": "DIRECT_INCOME_TRANSFER"},
+        {"source": "subsidies", "target": "food_pds", "weight": 213000.0, "rel": "FOOD_SUBSIDY_ENVELOPE"},
+        {"source": "subsidies", "target": "fert_dept", "weight": 168000.0, "rel": "FERTILIZER_SUBSIDY_ENVELOPE"},
+        {"source": "food_pds", "target": "nfsa_food", "weight": 205250.0, "rel": "FOOD_SECURITY_PDS"},
+        {"source": "fert_dept", "target": "fert_sub", "weight": 164000.0, "rel": "AGRI_INPUT_SUBSIDY"},
+        {"source": "social", "target": "mohfw_health", "weight": 90659.0, "rel": "HEALTHCARE_ENVELOPE"},
+        {"source": "mord", "target": "pmay", "weight": 24329.0, "rel": "RURAL_HOUSING_PMAY_G"},
+        {"source": "borrowings", "target": "infra", "weight": 544000.0, "rel": "DIRECT_DEBT_TO_CAPEX"},
+        {"source": "borrowings", "target": "interest", "weight": 618940.0, "rel": "DEBT_ROLLOVER_FINANCING"},
+        {"source": "borrowings", "target": "defense", "weight": 172000.0, "rel": "SECURITY_CAPITAL_BORROWING"},
+        {"source": "devolution", "target": "rural_agri", "weight": 350000.0, "rel": "STATE_DEVOLUTION_RURAL_SPEND"},
+        {"source": "devolution", "target": "social", "weight": 380000.0, "rel": "STATE_DEVOLUTION_HEALTH_EDU"},
+        {"source": "transfers_grants", "target": "mord", "weight": 120000.0, "rel": "PANCHAYAT_TIER_GRANTS"},
+        {"source": "non_tax", "target": "social", "weight": 150000.0, "rel": "DIVIDEND_TO_HUMAN_CAPITAL"},
+        {"source": "non_tax", "target": "infra", "weight": 200000.0, "rel": "SPECTRUM_AUCTION_TO_INFRA"},
+        {"source": "non_tax", "target": "other_exp", "weight": 212692.0, "rel": "ADMIN_COST_ABSORPTION"},
+        {"source": "morth", "target": "railways", "weight": 45000.0, "rel": "PM_GATI_SHAKTI_MULTIMODAL"},
+        {"source": "food_pds", "target": "rural_agri", "weight": 180000.0, "rel": "MSP_GRAIN_PROCUREMENT"},
+        {"source": "moa", "target": "fert_dept", "weight": 120000.0, "rel": "AGRI_FERT_INPUT_SUBSIDY"},
+        {"source": "defense", "target": "infra", "weight": 25000.0, "rel": "STRATEGIC_BORDER_ROADS"},
+        {"source": "net_tax", "target": "transfers_grants", "weight": 232000.0, "rel": "POST_DEVOLUTION_DEFICIT_GRANTS"}
+      ]
+    };
+
+    const CLUSTER_COLORS = [
+      "#EA580C", // 0: Amber
+      "#10B981", // 1: Emerald
+      "#3B82F6", // 2: Blue
+      "#A855F7", // 3: Purple
+      "#EF4444"  // 4: Red
+    ];
+
+    // Canvas Force Simulation Engine
+    const canvas = document.getElementById("graphCanvas");
+    const ctx = canvas.getContext("2d");
+
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+    canvas.width = width;
+    canvas.height = height;
+
+    window.addEventListener("resize", () => {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = width;
+      canvas.height = height;
+    });
+
+    // Node objects with spatialization coordinates
+    const nodesMap = {};
+    const nodes = GRAPH_DATA.nodes.map(n => {
+      const tierX = {
+        1: width * 0.12,
+        2: width * 0.28,
+        3: width * 0.42,
+        4: width * 0.52,
+        5: width * 0.68,
+        6: width * 0.88
+      }[n.tier] || width / 2;
+
+      const obj = {
+        ...n,
+        x: tierX + (Math.random() - 0.5) * 80,
+        y: height / 2 + (Math.random() - 0.5) * (height * 0.65),
+        vx: 0,
+        vy: 0,
+        radius: 12 + n.cb * 42,
+        color: CLUSTER_COLORS[n.comm] || "#94A3B8"
+      };
+      nodesMap[n.id] = obj;
+      return obj;
+    });
+
+    const edges = GRAPH_DATA.edges.map(e => ({
+      ...e,
+      sourceNode: nodesMap[e.source],
+      targetNode: nodesMap[e.target]
+    }));
+
+    // Populate search dropdown
+    const searchSelect = document.getElementById("nodeSearch");
+    nodes.forEach(n => {
+      const opt = document.createElement("option");
+      opt.value = n.id;
+      opt.textContent = `${n.label} (Tier ${n.tier})`;
+      searchSelect.appendChild(opt);
+    });
+
+    // State Variables
+    let selectedNode = nodesMap["central_pool"];
+    let hoveredNode = null;
+    let draggedNode = null;
+    let activeCluster = "all";
+    let sizeMetric = "betweenness";
+    let repulsionStrength = 250;
+    let springDistance = 120;
+    let panX = 0, panY = 0, zoom = 1;
+    let isPanning = false, startPanX = 0, startPanY = 0;
+
+    // ForceAtlas2 Physics Step
+    function stepSimulation() {
+      // 1. Repulsion (Barnes-Hut approximation)
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          const a = nodes[i];
+          const b = nodes[j];
+          let dx = b.x - a.x;
+          let dy = b.y - a.y;
+          let dist = Math.sqrt(dx * dx + dy * dy) || 1;
+          if (dist < 450) {
+            let force = (repulsionStrength * 15) / (dist * dist);
+            let fx = (dx / dist) * force;
+            let fy = (dy / dist) * force;
+            a.vx -= fx;
+            a.vy -= fy;
+            b.vx += fx;
+            b.vy += fy;
+          }
+        }
+      }
+
+      // 2. Link Spring Attraction
+      for (let e of edges) {
+        if (!e.sourceNode || !e.targetNode) continue;
+        const a = e.sourceNode;
+        const b = e.targetNode;
+        let dx = b.x - a.x;
+        let dy = b.y - a.y;
+        let dist = Math.sqrt(dx * dx + dy * dy) || 1;
+        let force = (dist - springDistance) * 0.0035;
+        let fx = (dx / dist) * force;
+        let fy = (dy / dist) * force;
+        a.vx += fx;
+        a.vy += fy;
+        b.vx -= fx;
+        b.vy -= fy;
+      }
+
+      // 3. Tier Horizontal Elastic Anchor & Velocity Damping
+      for (let n of nodes) {
+        if (n === draggedNode) continue;
+        const targetX = {
+          1: width * 0.12,
+          2: width * 0.28,
+          3: width * 0.42,
+          4: width * 0.52,
+          5: width * 0.68,
+          6: width * 0.88
+        }[n.tier] || width / 2;
+
+        n.vx += (targetX - n.x) * 0.008; // horizontal tier guidance
+        n.vy += (height / 2 - n.y) * 0.002; // weak vertical center gravity
+
+        n.vx *= 0.88; // damping
+        n.vy *= 0.88;
+
+        n.x += n.vx;
+        n.y += n.vy;
+      }
+    }
+
+    // Render Loop
+    let particleOffset = 0;
+    function render() {
+      stepSimulation();
+      particleOffset += 0.015;
+
+      ctx.save();
+      ctx.clearRect(0, 0, width, height);
+
+      // Pan & Zoom
+      ctx.translate(panX, panY);
+      ctx.scale(zoom, zoom);
+
+      // Draw Edges
+      for (let e of edges) {
+        const s = e.sourceNode;
+        const t = e.targetNode;
+        if (!s || !t) continue;
+
+        const isFiltered = activeCluster !== "all" && s.comm !== parseInt(activeCluster) && t.comm !== parseInt(activeCluster);
+        const isHighlight = selectedNode && (s.id === selectedNode.id || t.id === selectedNode.id);
+
+        ctx.beginPath();
+        ctx.moveTo(s.x, s.y);
+        ctx.lineTo(t.x, t.y);
+
+        const edgeWidth = Math.max(1.2, Math.log10(e.weight) * 1.5);
+        ctx.lineWidth = isHighlight ? edgeWidth + 2 : edgeWidth;
+
+        if (isFiltered) {
+          ctx.strokeStyle = "rgba(51, 65, 85, 0.15)";
+        } else if (isHighlight) {
+          ctx.strokeStyle = s.id === selectedNode.id ? "#38BDF8" : "#A855F7";
+        } else {
+          ctx.strokeStyle = "rgba(148, 163, 184, 0.25)";
+        }
+        ctx.stroke();
+
+        // Animated particles along edges
+        if (!isFiltered) {
+          const tProgress = (particleOffset + (s.tier * 0.1)) % 1;
+          const px = s.x + (t.x - s.x) * tProgress;
+          const py = s.y + (t.y - s.y) * tProgress;
+          ctx.beginPath();
+          ctx.arc(px, py, isHighlight ? 3.5 : 2, 0, Math.PI * 2);
+          ctx.fillStyle = s.color;
+          ctx.fill();
+        }
+      }
+
+      // Draw Nodes
+      for (let n of nodes) {
+        const isFiltered = activeCluster !== "all" && n.comm !== parseInt(activeCluster);
+        const isSelected = selectedNode && n.id === selectedNode.id;
+        const isHovered = hoveredNode && n.id === hoveredNode.id;
+
+        // Radius dynamically calculated based on selected metric
+        let r = 14;
+        if (sizeMetric === "betweenness") r = 14 + n.cb * 48;
+        else if (sizeMetric === "degree") r = 10 + n.deg * 3.5;
+        else if (sizeMetric === "budget") r = 12 + Math.log10(n.budget) * 4;
+
+        n.radius = r;
+
+        // Glow ring for selected/hovered
+        if (isSelected || isHovered) {
+          ctx.beginPath();
+          ctx.arc(n.x, n.y, r + 8, 0, Math.PI * 2);
+          ctx.fillStyle = n.color + "33";
+          ctx.fill();
+        }
+
+        // Main Node Body
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, r, 0, Math.PI * 2);
+        ctx.fillStyle = isFiltered ? "#1E293B" : n.color;
+        ctx.fill();
+        ctx.lineWidth = isSelected ? 3.5 : 1.5;
+        ctx.strokeStyle = isSelected ? "#FFFFFF" : "rgba(255, 255, 255, 0.4)";
+        ctx.stroke();
+
+        // Node Label
+        if (!isFiltered || isSelected || isHovered) {
+          ctx.font = isSelected ? "bold 13px 'Plus Jakarta Sans', sans-serif" : "11px 'Plus Jakarta Sans', sans-serif";
+          ctx.fillStyle = isSelected ? "#FFFFFF" : (isFiltered ? "#475569" : "#CBD5E1");
+          ctx.fillText(n.label, n.x + r + 6, n.y + 4);
+        }
+      }
+
+      ctx.restore();
+      requestAnimationFrame(render);
+    }
+
+    // Interaction Handlers
+    function updateHUD(node) {
+      if (!node) return;
+      document.getElementById("hudTier").textContent = `TIER ${node.tier} • ${node.category.toUpperCase()}`;
+      document.getElementById("hudTitle").textContent = node.label;
+      document.getElementById("hudCategory").textContent = `Category: ${node.category} • Louvain Cluster ${node.comm}`;
+      document.getElementById("hudBudget").textContent = `₹${node.budget.toLocaleString()} Cr`;
+      document.getElementById("hudBetweenness").textContent = node.cb.toFixed(3);
+
+      const inFlows = edges.filter(e => e.target === node.id);
+      const outFlows = edges.filter(e => e.source === node.id);
+      document.getElementById("hudInDeg").textContent = `${inFlows.length} Inflows`;
+      document.getElementById("hudOutDeg").textContent = `${outFlows.length} Outflows`;
+
+      const hudFlows = document.getElementById("hudFlows");
+      hudFlows.innerHTML = "";
+      inFlows.forEach(e => {
+        const item = document.createElement("div");
+        item.className = "flow-item";
+        item.innerHTML = `<span>← ${nodesMap[e.source]?.label || e.source}</span><span class="amt">₹${e.weight.toLocaleString()} Cr</span>`;
+        hudFlows.appendChild(item);
+      });
+      outFlows.forEach(e => {
+        const item = document.createElement("div");
+        item.className = "flow-item";
+        item.innerHTML = `<span>→ ${nodesMap[e.target]?.label || e.target}</span><span class="amt">₹${e.weight.toLocaleString()} Cr</span>`;
+        hudFlows.appendChild(item);
+      });
+    }
+
+    // Mouse / Touch Event Listeners
+    function getMousePos(e) {
+      const rect = canvas.getBoundingClientRect();
+      return {
+        x: (e.clientX - rect.left - panX) / zoom,
+        y: (e.clientY - rect.top - panY) / zoom
+      };
+    }
+
+    canvas.addEventListener("mousedown", e => {
+      const pos = getMousePos(e);
+      let clickedNode = null;
+      for (let n of nodes) {
+        let dx = n.x - pos.x;
+        let dy = n.y - pos.y;
+        if (Math.sqrt(dx * dx + dy * dy) <= n.radius + 6) {
+          clickedNode = n;
+          break;
+        }
+      }
+
+      if (clickedNode) {
+        selectedNode = clickedNode;
+        draggedNode = clickedNode;
+        updateHUD(clickedNode);
+        searchSelect.value = clickedNode.id;
+      } else {
+        isPanning = true;
+        startPanX = e.clientX - panX;
+        startPanY = e.clientY - panY;
+      }
+    });
+
+    window.addEventListener("mousemove", e => {
+      if (draggedNode) {
+        const pos = getMousePos(e);
+        draggedNode.x = pos.x;
+        draggedNode.y = pos.y;
+        draggedNode.vx = 0;
+        draggedNode.vy = 0;
+      } else if (isPanning) {
+        panX = e.clientX - startPanX;
+        panY = e.clientY - startPanY;
+      } else {
+        const pos = getMousePos(e);
+        let found = null;
+        for (let n of nodes) {
+          let dx = n.x - pos.x;
+          let dy = n.y - pos.y;
+          if (Math.sqrt(dx * dx + dy * dy) <= n.radius + 6) {
+            found = n;
+            break;
+          }
+        }
+        hoveredNode = found;
+        canvas.style.cursor = found ? "pointer" : "default";
+      }
+    });
+
+    window.addEventListener("mouseup", () => {
+      draggedNode = null;
+      isPanning = false;
+    });
+
+    canvas.addEventListener("wheel", e => {
+      e.preventDefault();
+      const zoomFactor = e.deltaY < 0 ? 1.08 : 0.92;
+      zoom = Math.max(0.4, Math.min(3.0, zoom * zoomFactor));
+    });
+
+    // Control Deck Event Listeners
+    document.getElementById("sizeEncoding").addEventListener("change", e => {
+      sizeMetric = e.target.value;
+    });
+
+    document.querySelectorAll(".cluster-pill").forEach(pill => {
+      pill.addEventListener("click", () => {
+        document.querySelectorAll(".cluster-pill").forEach(p => p.classList.remove("active"));
+        pill.classList.add("active");
+        activeCluster = pill.getAttribute("data-cluster");
+      });
+    });
+
+    searchSelect.addEventListener("change", e => {
+      const nid = e.target.value;
+      if (nodesMap[nid]) {
+        selectedNode = nodesMap[nid];
+        updateHUD(selectedNode);
+        // smooth pan to node
+        panX = width / 2 - selectedNode.x * zoom;
+        panY = height / 2 - selectedNode.y * zoom;
+      }
+    });
+
+    document.getElementById("repulsionSlider").addEventListener("input", e => {
+      repulsionStrength = parseInt(e.target.value);
+      document.getElementById("repulsionVal").textContent = repulsionStrength;
+    });
+
+    document.getElementById("distanceSlider").addEventListener("input", e => {
+      springDistance = parseInt(e.target.value);
+      document.getElementById("distanceVal").textContent = springDistance;
+    });
+
+    document.getElementById("resetLayoutBtn").addEventListener("click", () => {
+      panX = 0;
+      panY = 0;
+      zoom = 1;
+      nodes.forEach(n => {
+        const tierX = {
+          1: width * 0.12,
+          2: width * 0.28,
+          3: width * 0.42,
+          4: width * 0.52,
+          5: width * 0.68,
+          6: width * 0.88
+        }[n.tier] || width / 2;
+        n.x = tierX + (Math.random() - 0.5) * 60;
+        n.y = height / 2 + (Math.random() - 0.5) * (height * 0.6);
+        n.vx = 0;
+        n.vy = 0;
+      });
+    });
+
+    // Initialize HUD with CFI
+    updateHUD(selectedNode);
+    requestAnimationFrame(render);
+  </script>
 </body>
 </html>
